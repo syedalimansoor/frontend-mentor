@@ -2,7 +2,7 @@
 
 A responsive testimonials section with a slider that can scroll through multiple reviewers/authors for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge.
 
-Live site: https://alimansoor-create.github.io/frontend-mentor/coding-bootcamp-testimonials-slider
+Live site: https://alimansoor-create.github.io/frontend-mentor/coding-bootcamp-testimonials-slider-master
 
 Here's the goal:
 
