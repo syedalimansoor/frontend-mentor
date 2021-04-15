@@ -2,7 +2,7 @@
 
 A responsive landing page for a coming soon fashion product, built using Sass with custom Javascript form validation, for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge.
 
-Live site: https://alimansoor-create.github.io/base-apparel-coming-soon-master
+Live site: https://alimansoor-create.github.io/frontend-mentor/base-apparel-coming-soon-master
 
 Here's the goal:
 
