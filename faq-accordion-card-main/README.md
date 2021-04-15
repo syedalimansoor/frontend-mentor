@@ -2,6 +2,8 @@
 
 An FAQ accordion card for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge, built using HTML, SCSS, and JS.
 
+Live site: https://alimansoor-create.github.io/frontend-mentor/faq-accordion-card-main
+
 Here is the goal:
 
 ![Design preview for the FAQ accordion card coding challenge](./design/desktop-preview.jpg)
