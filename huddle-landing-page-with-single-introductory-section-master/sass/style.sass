@@ -1,0 +1,139 @@
+@use "type"
+@use "colors"
+
+// Resets
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    background-color: colors.$violet
+    background-image: url("../images/bg-mobile.svg")
+    background-repeat: no-repeat
+    background-size: contain
+    padding: 2em
+
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.logo
+    width: 8em
+    margin-bottom: 3.2em
+
+.content
+    display: flex
+    flex-direction: column
+
+.illustration
+    width: 100%
+    margin: 0 auto
+    margin-bottom: 3.5em
+    max-width: 370px
+
+.intro
+    text-align: center
+
+.title
+    font-family: type.$font-headings
+    font-size: 1.6rem
+    margin-bottom: .6em
+
+.descr
+    line-height: 1.6em
+    margin: 0 auto
+    margin-bottom: 1.5em
+    max-width: 650px
+
+.register-btn
+    font-family: type.$font-headings
+    font-weight: type.$weight-reg
+    color: colors.$violet
+    border-radius: 99em
+    border: 0
+    padding: .8em 3em
+    max-width: 16em
+    width: 100%
+    cursor: pointer
+    box-shadow: 0 .2em .5em adjust-color(black, $alpha:-.5)
+    margin-bottom: 4em
+
+    transition: 200ms ease
+    &:hover
+        background-color: colors.$soft-magenta
+        color: white
+        font-weight: type.$weight-reg
+        box-shadow: 0 .4em 1em adjust-color(black, $alpha:-.3)
+
+    &:active
+        transition: 50ms ease
+        outline: 2px solid colors.$soft-magenta
+        background-color: inherit
+        box-shadow: none
+
+.socials
+    display: flex
+    justify-content: center
+    gap: .8em
+
+.socials__btn
+    background: inherit
+    width: 2em
+    height: 2em
+    border: none
+    border-radius: 99em
+    color: white
+    outline: 1px solid currentColor
+    cursor: pointer
+
+    transition: 100ms ease
+    &:hover
+        color: colors.$soft-magenta
+    &:active
+        transition: 50ms ease
+        background: colors.$soft-magenta
+        color: white
+        outline: none
+
+@media (min-width:  810px)
+    .wrapper
+        background-size: cover
+
+@media (min-width: 1000px)
+    .wrapper
+        background-image: url("../images/bg-desktop.svg")
+        padding: 3em 4em
+
+    .logo
+        margin-bottom: 5em
+        width: 10em
+
+    .content
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        gap: 4em
+
+    .illustration
+        // width:
+        max-width: 40em
+        min-width: 500px
+        align-self: center
+
+    .intro
+        // padding-top: 3em
+        text-align: left
+
+    .title
+        font-size: 2.5rem
+
+    .descr
+        margin-left: unset
+        margin-right: unset
+
+    .socials
+        justify-content: end

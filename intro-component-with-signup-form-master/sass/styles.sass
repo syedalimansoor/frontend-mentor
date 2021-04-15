@@ -1,0 +1,148 @@
+@use "colors"
+@use "type"
+
+// Reset
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+#wrapper
+    width: 100%
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: stretch
+    background-color: colors.$red
+    background-image: url("../images/bg-intro-mobile.png")
+    padding: 5em 7.5%
+
+    color: white
+    text-align: center
+
+#signup
+    display: flex
+    flex-direction: column
+
+#signup-intro__heading
+    font-size: 1.8rem
+    line-height: 1.2em
+    margin-bottom: 1em
+
+#signup-intro
+    margin-bottom: 3em
+
+#signup-reg__caption
+    background-color: colors.$blue
+    border-radius: .5em
+    padding: 1em 4em
+    box-shadow: 0 .5em 0 adjust-color(colors.$dark-blue, $alpha:-.7)
+    margin-bottom: 1.5em
+
+#signup-reg__form
+    background-color: #fff
+    border-radius: .5em
+    padding: 1.5em
+    color: colors.$grayish-blue
+    box-shadow: 0 .5em 0 adjust-color(black, $alpha:-0.8)
+
+.signup-reg__field
+    position: relative
+    margin-bottom: 1em
+
+    &--invalid
+        .signup-reg__input
+            border-color: colors.$red!important
+            border-width: 2px
+        .signup-reg__error, .signup-reg__error-icon
+            display: block
+
+.signup-reg__input, #signup-reg__submit
+    width: 100%
+    padding: 1em 1.2em
+    font-family: type.$font
+    border-radius: .3em
+
+.signup-reg__input
+    border: 1px solid colors.$grayish-blue
+    margin-top: 0
+    font-size: type.$regular-size
+    font-weight: type.$bold-weight
+    transition: 100ms ease
+
+    &:focus
+        outline: none
+        border-color: colors.$blue
+
+.signup-reg__error
+    display: none
+    color: colors.$red
+    font-size: .75rem
+    margin-top: .5em
+    text-align: right
+    font-weight: type.$med-weight
+    font-style: italic
+
+.signup-reg__error-icon
+    display: none
+    position: absolute
+    top: 1.5em
+    right: 2em
+
+#signup-reg__submit
+    background-color: colors.$green
+    border: none
+    color: white
+    text-transform: uppercase
+    letter-spacing: .1em
+    box-shadow: 0 .3em 0 adjust-color(colors.$green, $blackness: 20%)
+    transition: all 100ms ease
+    cursor: pointer
+    margin-bottom: 1.2em
+
+    &:enabled:active
+        transform: translateY(.3em)
+        box-shadow: none
+
+    &:disabled
+        opacity: .5
+
+#signup-reg__tos
+    font-size: .7rem
+    line-height: 1.8em
+    padding-bottom: 0
+    a
+        font-weight: type.$bold-weight
+        color: colors.$red
+        text-decoration: none
+        &:hover
+            text-decoration: underline
+
+@media (min-width:  1100px)
+
+    #wrapper
+        padding-top: 3em
+        padding-bottom: 3em
+
+    #signup
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+    #signup-intro
+        text-align: left
+        width: 40%
+        margin-bottom: 0
+
+    #signup-intro__heading
+        font-size: 3rem
+
+    #signup-reg
+        width: 50%
+        // height: 100%
+
+    #signup-reg__form
+        padding: 2em
+
+    .signup-reg__field
+        margin-bottom: 1.5em

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/attribution.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="Base Apparel Logo" />
+      </div>
+
+      <picture class="hero">
+        <source media="(min-width: 800px)" srcset="./images/hero-desktop.jpg" />
+        <source media="(max-width: 799px)" srcset="./images/hero-mobile.jpg" />
+        <img
+          src="./images/hero-mobile.jpg"
+          alt="Picture of a model"
+          class="hero"
+        />
+      </picture>
+
+      <header class="content">
+        <h1 class="title">
+          <span class="title__small">We're</span>
+          coming soon
+        </h1>
+        <p class="intro">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form action="#" class="notify" autocomplete="off" novalidate>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="notify__email"
+            placeholder="Email Address"
+            title="Enter your email address"
+            required
+            aria-required="true"
+          />
+          <button title="Submit email" class="notify__submit">
+            <img src="./images/icon-arrow.svg" alt="Submit email" />
+          </button>
+          <label for="email" class="notify__error"
+            >Please provide a valid email</label
+          >
+        </form>
+      </header>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.instagram.com/design.alimansoor" target="_blank"
+          >Syed Ali Mansoor</a
+        >.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

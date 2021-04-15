@@ -1,0 +1,81 @@
+@use "colors"
+@use "type"
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: colors.$secondary
+
+.card
+    display: flex
+    flex-direction: column
+    border-radius: .5em
+    overflow: hidden
+
+    width: 90%
+    max-width: 60em
+    margin: 5em 0
+
+.card__item
+    padding: 2em
+
+.card__heading
+    color: colors.$secondary
+    text-transform: uppercase
+    font-family: type.$headings
+    font-size: 2rem
+    margin: .5em 0
+
+.card__descr
+    line-height: 1.5em
+    color: colors.$body-copy
+
+.card__btn
+    box-sizing: border-box
+    background-color: colors.$secondary
+    margin-top: 1.5em
+    padding: .8em 1.5em
+    border: 0px
+    border-radius: 100em
+    transition: all 200ms ease
+    &:hover
+        cursor: pointer
+        transform: translateY(-5px)
+        box-shadow: 0 5px 5px rgba(0,0,0, .3)
+    &:active
+        transition: all 50ms ease
+        color: colors.$body-copy!important
+        transform: none
+        box-shadow: none
+        background-color: rgba(0,0,0,0)
+        border: 2px solid colors.$secondary
+
+// Vehicle class-specific colouring
+.sedans
+    background-color: colors.$sedans
+    .card__btn
+        color: colors.$sedans
+
+.suvs
+    background-color: colors.$suvs
+    .card__btn
+        color: colors.$suvs
+.luxury
+    background-color: colors.$luxury
+    .card__btn
+        color: colors.$luxury
+
+// Desktop
+@media (min-width: 800px)
+    .card
+        flex-direction: row
+    .card__item
+        padding: 3em
+    .card__heading
+        margin: 1em 0
+        font-size: 2.5rem
+    .card__btn
+        margin-top: 7em

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap')
+
+$font: "Libre Franklin", sans-serif
+
+$weight-thin: 300
+$weight-med: 600
+$weight-bold: 700
+
+$size-reg: 20px
+
+:root
+    font-family: $font
+    font-weight: $weight-thin
+    font-size: 14px
+
+    @media (min-width: 1000px)
+        font-size: $size-reg
+
+.text-bold
+    font-weight: $weight-bold

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/31a888942e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/attribution.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="content">
+        <img src="./images/logo.svg" alt="PING Logo" class="logo" />
+        <h1 class="title">
+          We are launching <span class="text-bold">soon!</span>
+        </h1>
+        <div class="subtitle">Subscribe and get notified</div>
+        <form action="#" class="notify" autocomplete="off" novalidate>
+          <input
+            type="email"
+            title="Email address"
+            placeholder="Your email address..."
+            class="notify__email"
+            id="email"
+          />
+          <label for="email" class="notify__error"
+            >Whoops! It looks like you forgot to add your email</label
+          >
+          <button class="notify__submit" title="Notify me of future updates">
+            Notify Me
+          </button>
+        </form>
+        <img
+          src="./images/illustration-dashboard.png"
+          alt="An illustration of our dashboard"
+          class="illustration"
+        />
+        <footer>
+          <address class="social">
+            <button
+              class="fab fa-facebook-f social__btn"
+              title="Facebook"
+            ></button>
+            <button class="fab fa-twitter social__btn" title="Twitter"></button>
+            <button
+              class="fab fa-instagram social__btn"
+              title="Instagram"
+            ></button>
+          </address>
+
+          <small class="copyright">
+            &copy; Copyright Ping. All rights reserved.
+          </small>
+        </footer>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by
+        <a href="https://www.instagram.com/design.alimansoor" target="_blank">
+          Syed Ali Mansoor
+        </a>
+        .
+      </p>
+    </footer>
+  </body>
+</html>

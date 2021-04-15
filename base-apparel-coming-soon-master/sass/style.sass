@@ -1,0 +1,141 @@
+@use "type"
+@use "colors"
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    background-image: colors.$grad-bg
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    overflow: hidden
+
+.logo
+    padding: 2em
+
+    img
+        height: 1.6em
+        vertical-align: middle
+
+.hero
+    width: 100%
+    margin-bottom: 1.5em
+
+.content
+    text-align: center
+
+    *
+        margin: 0 auto
+
+.title
+    font-size: 2.2rem
+    text-transform: uppercase
+    color: colors.$dark-grayish-red
+    font-weight: type.$weight-bld
+    letter-spacing: .3em
+    max-width: 6em
+    margin-bottom: .5em
+
+    &__small
+        font-weight: type.$weight-thn
+        color: colors.$desaturated-red
+
+.intro
+    width: 80%
+    max-width: 22em
+    line-height: 1.6em
+    margin-bottom: 2em
+
+.notify
+    width: 80%
+    position: relative
+    margin-bottom: 4em
+
+    >*
+        outline: none
+        padding: 0 1.4rem
+        height: 3rem
+        border-radius: 99em
+
+    &__email
+        font-family: inherit
+        background-color: inherit
+        color: inherit
+        width: 100%
+        border: 1px solid colors.$desaturated-red
+        margin-bottom: .5em
+
+    &__submit
+        font-size: inherit
+        width: 20%
+        border: none
+        background: colors.$grad-btn
+        position: absolute
+        right: 0
+        top: 0
+        cursor: pointer
+        box-shadow: 0 .5em 1.5em adjust-color(colors.$desaturated-red, $alpha:-.3)
+        transition: 200ms ease
+        &:hover:enabled
+            box-shadow: 0 1em 2em adjust-color(colors.$desaturated-red, $alpha:-.3)
+        &:active:enabled
+            transition: 50ms ease
+            box-shadow: none
+
+        &:disabled
+            background: colors.$grad-btn-dsbld
+
+        img
+            vertical-align: middle
+
+    &__error
+        display: none
+        margin-left: unset
+        color: colors.$soft-red
+        font-size: .8rem
+
+        &--show
+            display: unset
+
+@media (min-width: 800px)
+    .wrapper
+        height: 100vh
+        background-image: url("../images/bg-pattern-desktop.svg"), colors.$grad-bg
+        background-repeat: no-repeat
+        // background-size: c
+
+    .logo
+        padding-top: 4em
+        padding-left: 8em
+        margin-bottom: 5em
+
+    .hero
+        flex-shrink: 0
+        order: 3
+        width: unset
+        height: 100%
+        align-self: end
+
+    .content
+        margin-left: 8rem
+        text-align: left
+        padding-right: 4em
+
+        *
+            margin-left: unset
+
+    .title
+        font-size: 5rem
+        line-height: 1.1em
+
+    .intro
+        max-width: 30em
+
+@media (min-width: 1441px)
+    .wrapper
+        background-size: cover

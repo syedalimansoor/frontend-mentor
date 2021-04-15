@@ -1,0 +1,163 @@
+@use "type"
+@use "colors"
+
+// Reset
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+// Wrapper styles
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.content
+    margin: 4em 2em 2em
+    text-align: center
+
+.logo
+    display: block
+    width: 4.5em
+    margin: 0 auto
+    margin-bottom: 2.5em
+
+.title
+    font-weight: type.$weight-thin
+    font-size: 1.8rem
+    margin-bottom: .6em
+
+.subtitle
+    margin-bottom: 2em
+
+.notify
+    margin: 0 auto
+    margin-bottom: 4em
+    max-width: 21em
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: stretch
+    gap: .6em
+
+    input, button
+        border-radius: 99em
+        box-sizing: content-box
+        padding: 1.2em 2.5em
+        outline: none
+
+.notify__email
+    font-family: inherit
+    border: 1px solid colors.$pale-blue
+    color: colors.$blue
+
+    &--error
+        border-color: colors.$light-red
+
+.notify__error
+    display: none
+    font-style: italic
+    color: colors.$light-red
+    font-size: .8rem
+    margin-bottom: 1em
+
+    &--error
+        display: block
+
+.notify__submit
+    border: 0
+    font-family: inherit
+    background-color: colors.$blue
+    color: white
+    font-weight: type.$weight-med
+    box-shadow: 0 .5em 2em adjust-color(colors.$blue, $alpha:-.5)
+    cursor: pointer
+
+    transition: 200ms ease
+    &:hover:enabled
+        box-shadow: 0 1em 2.5em adjust-color(colors.$blue, $alpha:-.5)
+    &:active:enabled
+        transition: 50ms ease
+        box-shadow: none
+        background-color: inherit
+        color: colors.$blue
+        border: 2px solid colors.$blue
+    &:disabled
+        opacity: .5
+
+.illustration
+    width: 100%
+    max-width: 480px
+    margin-bottom: 8em
+
+.social
+    display: flex
+    justify-content: center
+    gap: 1em
+    margin-bottom: 2em
+
+.social__btn
+    outline: none
+    background-color: white
+    width: 30px
+    height: 30px
+    padding: .5em
+    border: 1px solid colors.$pale-blue
+    border-radius: 99em
+    color: colors.$blue
+    cursor: pointer
+    transition: 200ms ease
+
+    &:hover
+        background-color: colors.$blue
+        color: white
+
+.copyright
+    color: adjust-color(colors.$very-dark-blue, $alpha:-.5)
+    font-size: .6 rem
+
+@media (min-width: 1000px)
+
+    .content
+        width: 60%
+
+    .logo
+        width: 4em
+
+    .title
+        font-size: 2.4rem
+
+    .notify
+        flex-direction: row
+        flex-wrap: wrap
+        margin-bottom: 2em
+        max-width: 35em
+
+    .notify__email
+        flex-grow: 1
+
+    .notify__submit
+        flex-grow: 1
+        max-width: 10em
+
+    .notify__error
+        order: 3
+        flex-basis: 100%
+        text-align: left
+        font-size: .6rem
+        margin-left: 3em
+
+    .illustration
+        max-width: 700px
+        margin-bottom: 3em
+
+    .social
+        margin-bottom: 1em
+
+    .copyright
+        font-size: .6rem

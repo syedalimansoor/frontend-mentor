@@ -1,0 +1,174 @@
+@use "type"
+@use "colors"
+
+*
+    box-sizing: border-box
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background-color: colors.$light-grayish-blue
+
+.card
+    margin: 5em 0
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    border-radius: .8em
+    box-shadow: 0 1em 3em rgba(0,0,0,0.1)
+    width: 90%
+    max-width: 50em
+    // overflow: hidden
+    color: colors.$desaturated-dark-blue
+
+.card__image
+    object-fit: cover
+    height: 15em
+    border-radius: .8em .8em 0 0
+
+.card__data
+    // padding: 3em
+    // padding-bottom: 2em
+    
+.card__heading
+    font-size: 1.5rem
+    font-weight: type.$weight-bold
+    margin-bottom: .5em
+    line-height: 1.4em
+    color: colors.$very-dark-grayish-blue
+    padding: 3rem 3rem 0
+
+.card__descr
+    line-height: 1.5em
+    margin-bottom: 2em
+    padding: 0 3em
+
+.card__footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    padding: 1em 3em 1.5em
+    transition: 100ms ease
+    &--hidden
+        padding-bottom: 1em
+    
+
+.card__profile
+    display: inline-flex
+    align-items: center
+    width: max-content
+
+.card__authorImage
+    object-fit: cover
+    width: 3em
+    height: 3em
+    border-radius: 50%
+
+.card__profileText
+    margin-left: 1em
+
+.card__author
+    font-weight: type.$weight-bold
+    color: colors.$very-dark-grayish-blue
+    margin-bottom: .5em
+
+.card__shareBtn
+    z-index: 2
+    background-color: colors.$light-grayish-blue
+    border: none
+    width: 2.5em
+    height: 2.5em
+    border-radius: 50%
+    cursor: pointer
+    transition: 100ms ease
+    &:hover
+        // transform: translateY(-.1em)
+        box-shadow: 0 0 .5em rgba(0,0,0,0.5)
+    &--active
+        background-color: colors.$desaturated-dark-blue
+        box-shadow: none!important
+        svg path
+            fill: #fff !important
+            transition: inherit
+
+.card__shareDialog
+    opacity: 0
+    display: flex
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    color: colors.$grayish-blue
+    background-color: colors.$very-dark-grayish-blue
+    border-radius: 0 0 .8em .8em
+    padding: inherit
+    align-items: center
+    text-transform: uppercase
+    letter-spacing: .5em
+    transition: opacity 100ms ease, transform 100ms ease
+    *
+        margin-right: 1em
+
+    &--active
+        opacity: 1
+
+        img
+            cursor: pointer
+    
+    .triangle
+        display: none
+        position: absolute
+        left: 50%
+        top: 100%
+        transform: translateX(-50%)
+        width: 1.4em
+        height: 1.4em
+        border: .7em solid colors.$very-dark-grayish-blue
+        border-right: .7em solid rgba(0,0,0,0)
+        border-left: .7em solid rgba(0,0,0,0)
+        border-bottom: none
+
+@media (min-width: 762px) 
+    .card
+        flex-direction: row
+
+    .card__image
+        height: unset
+        width: 20em
+        border-radius: .8em 0 0 .8em
+
+    .card__descr
+        margin-bottom: .5em
+
+    .card__footer--hidden
+        padding-bottom: 1.5em
+
+    .card__shareDialog
+        width: unset
+        height: unset
+        bottom: unset
+        left: unset
+        right: -4.8em
+        bottom: 6em
+
+        width: 18em
+        border-radius: .5em
+        padding: 1em 2em
+        justify-content: space-between
+
+        transform: translateY(1em)
+
+        *
+            margin: 0
+
+        .triangle
+            display: block
+
+        &--active
+            transform: none
