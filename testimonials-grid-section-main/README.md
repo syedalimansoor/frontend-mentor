@@ -2,7 +2,7 @@
 
 A responsive testimonials section, made using CSS Grid and Sass, for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge. Used a lot of semantic elements in this one.
 
-Live site: https://www.alimansoor-create.github.io/frontend-mentor/testimonials-grid-section-main
+Live site: https://alimansoor-create.github.io/frontend-mentor/testimonials-grid-section-main
 
 Here's the goal:
 
