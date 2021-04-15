@@ -2,7 +2,7 @@
 
 A responsive card section built using Sass and Grid, for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge. Layouts for mobile, tablet, and desktop present.
 
-Live site: https://alimansoor-create.github.io/four-card-feature-section-master
+Live site: https://alimansoor-create.github.io/frontend-mentor/four-card-feature-section-master
 
 Here's the goal:
 
