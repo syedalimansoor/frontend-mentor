@@ -2,7 +2,7 @@
 
 A coming soon landing page built using Sass and JS form validation with custom styles, for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge.
 
-Live site: https://alimansoor-create.github.io/ping-coming-soon-page-master/
+Live site: https://alimansoor-create.github.io/frontend-mentor/ping-coming-soon-page-master/
 
 Here's the goal:
 
