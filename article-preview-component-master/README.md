@@ -1,7 +1,7 @@
 # Frontend Mentor - Article preview component
 
 An article card component built using HTML, Sass, and some Javascript to show a popup dialog, for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge <br>
-Live site: https://alimansoor-create.github.io/article-preview-component-master/
+Live site: https://alimansoor-create.github.io/frontend-mentor/article-preview-component-master/
 
 Here is the goal
 
