@@ -2,7 +2,7 @@
 
 A signup form with js validation and custom styles, built for a [Frontend Mentor](https://www.frontendmentor.io) coding challenge.
 
-Live site: https://alimansoor-create.github.io/intro-component-with-signup-form-master/
+Live site: https://alimansoor-create.github.io/frontend-mentor/intro-component-with-signup-form-master/
 
 Here's the goal:
 
