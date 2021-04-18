@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: #
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-pricing-component-using-sass-bem-and-js-for-the-toggle-c8HCuvLbw
 - Live Site URL: https://alimansoor-create.github.io/frontend-mentor/pricing-component-with-billing-toggle
 
 ## My process
