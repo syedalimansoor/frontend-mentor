@@ -55,7 +55,9 @@
   gap: 0.4em;
 }
 
-.attr__btns button {
+.attr__btns a {
+  text-decoration: none;
+  text-align: center;
   font-size: 0.8em;
   background-color: #c6ac9f;
   color: #473129;
@@ -66,7 +68,7 @@
 
   transition: background-color 200ms ease;
 }
-.attr__btns button:hover {
+.attr__btns a:hover {
   background-color: #473129;
   outline: 2px solid #c6ac9f;
   color: #c6ac9f;
