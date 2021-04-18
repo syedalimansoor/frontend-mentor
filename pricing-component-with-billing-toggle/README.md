@@ -41,6 +41,7 @@ Users should be able to:
   - `<section>` as a wrapper
   - `<main>` for the card area
   - `<article>` for each of the cards
+- BEM naming for the cards
 - Sass mixins
   - To create a template gradient function, which takes the direction as an input and adds a background purple gradient
 - Flexbox
