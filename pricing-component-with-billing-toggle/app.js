@@ -23,3 +23,20 @@ const updateElems = () => {
 
 updateElems()
 toggle.addEventListener("click", updateElems)
+
+// Toggle switch by clicking on labels
+const annually = document.querySelector(".js-annually")
+const monthly = document.querySelector(".js-monthly")
+
+annually.addEventListener("click", () => {
+    if (toggle.checked) {
+        toggle.checked = false
+    }
+    updateElems()
+})
+monthly.addEventListener("click", ()=> {
+    if (!toggle.checked) {
+        toggle.checked = true
+    }
+    updateElems()
+})

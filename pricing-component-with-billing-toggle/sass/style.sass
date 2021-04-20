@@ -37,6 +37,7 @@
 
     &__label
         color: colors.$light-grayish-blue
+        cursor: pointer
 
     &__switch
         vertical-align: middle
@@ -54,6 +55,9 @@
         &:checked + .toggle__slider::before
             transform: translateX(22px)
 
+        &:focus + .toggle__slider
+            outline: 1px solid colors.$dark-grayish-blue
+            outline-offset: 2px
     &__slider
         position: absolute
         top: 0
@@ -161,7 +165,7 @@
                 background-color: rgba(0,0,0,0)
                 color: white
 
-@media screen and ( min-width: 1000px )
+@media screen and ( min-width: 1150px )
 
     .wrapper
         background-image: url("../images/bg-bottom.svg"), url("../images/bg-top.svg")

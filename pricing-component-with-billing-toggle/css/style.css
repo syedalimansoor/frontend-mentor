@@ -38,6 +38,7 @@
 }
 .toggle__label {
   color: #b3b5c6;
+  cursor: pointer;
 }
 .toggle__switch {
   vertical-align: middle;
@@ -54,6 +55,10 @@
 }
 .toggle__checkbox:checked + .toggle__slider::before {
   transform: translateX(22px);
+}
+.toggle__checkbox:focus + .toggle__slider {
+  outline: 1px solid #494c5f;
+  outline-offset: 2px;
 }
 .toggle__slider {
   position: absolute;
@@ -164,7 +169,7 @@
   color: white;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1150px) {
   .wrapper {
     background-image: url("../images/bg-bottom.svg"), url("../images/bg-top.svg");
     background-position: bottom left -40px, top right;
