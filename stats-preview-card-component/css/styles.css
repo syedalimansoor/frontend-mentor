@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+:root {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.wrapper {
+  perspective: 900px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #090b1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5.8em 1.6em;
+}
+
+.card {
+  background-color: #1b1938;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0 0 4em rgba(0, 0, 0, 0.5));
+}
+
+.card__image {
+  width: 100%;
+  flex-basis: 16em;
+  background-image: url("../images/image-header-mobile.jpg");
+  background-size: cover;
+  flex-grow: 1;
+}
+.card__image .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #aa5cdb;
+  mix-blend-mode: multiply;
+}
+
+.card__data {
+  padding: 2.8em 2em;
+  text-align: center;
+}
+
+.card__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.15em;
+  letter-spacing: 0.02em;
+  color: white;
+  margin-bottom: 0.6em;
+}
+.card__title em {
+  color: #aa5cdb;
+  font-style: normal;
+}
+
+.card__descr {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7em;
+  margin-bottom: 2.6em;
+}
+
+.card__stats {
+  color: rgba(255, 255, 255, 0.6);
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4em;
+}
+
+.card__stat {
+  text-transform: none;
+  color: white;
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.3em;
+  letter-spacing: 0;
+}
+
+@media screen and (min-width: 420px) {
+  .card__stats {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .card {
+    width: 80%;
+    max-width: 1114px;
+    flex-direction: row;
+    height: min-content;
+  }
+
+  .card__image {
+    order: 2;
+    background-image: url("../images/image-header-desktop.jpg");
+    flex-basis: 49%;
+  }
+
+  .card__data {
+    width: 51%;
+    text-align: left;
+    padding: 4.7em;
+    padding-bottom: 4.2em;
+  }
+
+  .card__stats {
+    justify-content: start;
+  }
+
+  .card__title {
+    font-size: 2.3rem;
+    margin-bottom: 0.7em;
+    line-height: 1.3em;
+  }
+
+  .card__descr {
+    padding-right: 3em;
+    margin-bottom: 5em;
+  }
+
+  .card__stats {
+    gap: 5.5em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

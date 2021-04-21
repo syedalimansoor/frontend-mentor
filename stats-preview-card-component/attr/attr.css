@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.attr {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1em;
+  padding-bottom: 200px;
+  background-color: #473129;
+  background-image: url("pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 20% right;
+  background-size: 150px;
+  color: #c6ac9f;
+  font-family: Almarai, sans-serif;
+  font-size: 30px;
+}
+
+.attr__link {
+  display: block;
+  width: max-content;
+  text-decoration: none;
+  color: inherit;
+  -webkit-text-fill-color: #c6ac9f;
+  -webkit-text-stroke: #c6ac9f;
+  -webkit-text-stroke-width: 0;
+  font-size: 2em;
+  line-height: 1.2em;
+  margin-bottom: 0.4em;
+
+  transition: 200ms ease;
+}
+.attr__link:hover {
+  -webkit-text-fill-color: #473129;
+  -webkit-text-stroke-width: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.attr__hr {
+  width: 100%;
+  color: inherit;
+  margin-bottom: 1em;
+
+  transition: 200ms ease;
+}
+
+.attr__btns {
+  display: flex;
+  gap: 0.4em;
+}
+
+.attr__btns a {
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.8em;
+  background-color: #c6ac9f;
+  color: #473129;
+  border: none;
+  padding: 0.3em;
+  border-radius: 99em;
+  cursor: pointer;
+
+  transition: background-color 200ms ease;
+}
+.attr__btns a:hover {
+  background-color: #473129;
+  outline: 2px solid #c6ac9f;
+  color: #c6ac9f;
+}
+
+@media screen and (min-width: 900px) {
+  .attr {
+    font-size: 40px;
+    background-image: url("pattern-desktop.svg");
+    background-position: top right 10%;
+    background-size: 90px;
+    padding-bottom: 1em;
+  }
+
+  .attr__hr {
+    width: 10em;
+  }
+}
