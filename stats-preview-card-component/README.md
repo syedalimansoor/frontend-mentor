@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: #
-- Live Site URL: alimansoor-create.github.io/frontend-mentor/stats-preview-card-component
+- Live Site URL: https://alimansoor-create.github.io/frontend-mentor/stats-preview-card-component
 
 ## My process
 
