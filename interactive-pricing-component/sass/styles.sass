@@ -1,0 +1,311 @@
+@use "colors"
+@use "type"
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    background: url(../images/bg-pattern.svg) colors.$main-background no-repeat top -30px left
+    background-size: 90em
+
+    padding: 4em 0
+
+.header
+    background: url(../images/pattern-circles.svg) no-repeat center center
+    background-size: contain
+
+    text-align: center
+    padding: 2em 0
+    margin-bottom: 1.8em
+
+.title
+    color: colors.$cta-background
+    font-size: 1.35rem
+    font-weight: type.$weight-bld
+    margin-bottom: .4em
+
+.subtitle
+    font-size: .85rem
+    padding: 0 26%
+    line-height: 1.8em
+
+.card
+    align-self: center
+    width: 87%
+    border-radius: 10px
+    box-shadow: 0 .5em 2em colors.$empty-slider-bar
+    background-color: white
+
+    text-align: center
+
+.card__header, .card__footer
+    padding: 2.4em 1.6em 2.6em
+
+.card__header
+    display: flex
+    flex-direction: column
+    border-bottom: 1px solid colors.$empty-slider-bar
+
+.card__pageviews
+    text-transform: uppercase
+    font-weight: type.$weight-bld
+    font-size: .75rem
+    letter-spacing: .2em
+
+    margin-bottom: 3.8em
+
+.slider__slider
+    // -webkit-appearance: none
+    // -moz-appearance: none
+    appearance: none
+    width: 100%
+    height: 8px
+    background-color: colors.$empty-slider-bar
+    border-radius: 99em
+    outline: none
+
+    margin-bottom: 2.6em
+    cursor: pointer
+
+    &::-moz-range-thumb
+        appearance: none
+        width: 40px
+        height: 40px
+        border: 0
+        border-radius: 99em
+        background: url(../images/icon-slider.svg) no-repeat center center
+        background-color: colors.$slider-background
+        box-shadow: 0 1em 2em adjust-color(colors.$slider-background, $alpha:-0.3)
+        transition: 200ms ease
+    &::-webkit-slider-thumb
+        appearance: none
+        width: 40px
+        height: 40px
+        border: 0
+        border-radius: 99em
+        background: url(../images/icon-slider.svg) no-repeat center center
+        background-color: colors.$slider-background
+        box-shadow: 0 1em 2em adjust-color(colors.$slider-background, $alpha:-0.3)
+        transition: 200ms ease
+
+    &::-moz-range-progress
+        background-color: colors.$full-slider-bar
+        height: 100%
+        border-radius: 99em
+    &::-ms-fill-lower
+        background-color: colors.$full-slider-bar
+        height: 100%
+        border-radius: 99em
+
+    &:hover::-moz-range-thumb
+        background-color: adjust-color(colors.$slider-background, $saturation: 50%)
+    &:hover::-webkit-slider-thumb
+        background-color: adjust-color(colors.$slider-background, $saturation: 50%)
+
+    &:active::-moz-range-thumb
+        background-color: adjust-color(colors.$slider-background, $saturation: 50%, $lightness: -15%)
+    &:active::-webkit-slider-thumb
+        background-color: adjust-color(colors.$slider-background, $saturation: 50%, $lightness: -15%)
+
+    &:focus-visible::-moz-range-thumb
+        outline: 2px solid colors.$slider-background
+        outline-offset: 2px
+    &:focus-visible::-webkit-slider-thumb
+        outline: 2px solid colors.$slider-background
+        outline-offset: 2px
+
+.card__pricing
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: .7em
+    font-size: .95rem
+    margin-bottom: 2.5em
+
+.card__price
+    color: colors.$cta-background
+    font-size: 2.1rem
+    font-weight: type.$weight-bld
+
+.toggle
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: .8em
+    padding-right: 1em
+
+.toggle__switch
+    display: inline-block
+    position: relative
+    width: 44px
+    height: 22px
+
+.toggle__checkbox
+    opacity: 0
+    width: 0
+    height: 0
+
+    &:focus-visible + .toggle__slider
+        background-color: colors.$cta-background
+        outline: 2px solid colors.$cta-background
+        outline-offset: 2px
+
+.toggle__slider
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: colors.$toggle-background
+    border-radius: 99em
+    cursor: pointer
+    transition: 200ms ease
+
+    &::before
+        position: absolute
+        content: ""
+        top: 4px
+        left: 4px
+        width: 14px
+        height: 14px
+        background-color: white
+        border-radius: 99em
+        transition: 200ms ease
+
+    &:hover
+        background-color: colors.$slider-background
+
+.toggle__checkbox:checked + .toggle__slider::before
+    left: 26px
+
+.toggle__label
+    font-size: .8rem
+    letter-spacing: .02em
+
+.toggle__label--tagged
+    position: relative
+
+    &::after
+        content: "-25%"
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 110%
+
+        font-size: .65rem
+        font-weight: type.$weight-bld
+        background-color: colors.$discount-background
+        color: colors.$discount-text
+        padding: .35em .7em
+        border-radius: 99em
+
+.card__footer
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2em
+    padding-top: 1.4em
+
+.card__features
+    list-style-type: none
+    list-style-image: url(../images/icon-check.svg)
+    list-style-position: inside
+    font-size: .8rem
+
+    li
+        line-height: 2.3em
+
+        span
+            margin-left: .8em
+
+.card__cta
+    font-family: inherit
+    font-size: .8rem
+    font-weight: type.$weight-bld
+    background-color: colors.$cta-background
+    color: colors.$cta-text
+    padding: 1em 4em
+    border: 0
+    border-radius: 99em
+    cursor: pointer
+
+    transition: 200ms ease
+    &:hover
+        box-shadow: 0 0 1.5em colors.$cta-background
+    &:active
+        transition: 50ms ease
+        box-shadow: none
+        background-color: transparent
+        color: colors.$cta-background
+        // outline: 2px solid currentColor
+        box-shadow: 0 0 0 2px currentColor
+    &:focus-visible
+        outline: 2px solid colors.$cta-background
+        outline-offset: 2px
+
+@media screen and ( min-width: 800px )
+
+    .wrapper
+        background-size: contain
+
+    .header
+        padding: 2.5em
+        margin-bottom: 3em
+
+    .title
+        font-size: 1.875rem
+        margin-bottom: .3em
+
+    .subtitle
+        font-size: 1rem
+        padding: unset
+
+    .card
+        max-width: 36em
+        margin-bottom: 8em
+
+    .card__header, .card__footer
+        padding: 3em 3em
+
+    .card__header
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+
+    .card__pageviews
+        font-size: .9rem
+        margin-bottom: unset
+
+    .card__pricing
+        order: 2
+        margin-bottom: unset
+        font-size: 1rem
+
+    .card__price
+        font-size: 2.6rem
+
+    .card__slider
+        margin-top: 2.5em
+        margin-bottom: 1.6em
+        order: 3
+        width: 100%
+
+    .card__toggle
+        order: 4
+        margin-left: auto
+        margin-right: auto
+
+    .toggle__label--tagged::after
+        content: "25%\00A0 discount"
+
+    .card__footer
+        flex-direction: row
+        justify-content: space-between
+        text-align: left
+        padding-top: 2em
+        padding-bottom: 2em
