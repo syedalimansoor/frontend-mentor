@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: #
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-pricing-component-with-custom-slider-and-toggle-acJhWxNh8
 - Live Site URL: https://alimansoor-create.github.io/frontend-mentor/interactive-pricing-component
 
 ## My process
