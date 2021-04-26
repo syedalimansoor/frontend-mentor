@@ -29,3 +29,21 @@ function updateElems() {
 
 slider.addEventListener("input", updateElems)
 toggle.addEventListener("input", updateElems)
+
+// Make labels clickable
+
+beforeLabel = document.querySelector(".js-toggle-label-before")
+afterLabel = document.querySelector(".js-toggle-label-after")
+
+beforeLabel.addEventListener("click", function () {
+    if (toggle.checked) {
+        toggle.checked = false
+        updateElems()
+    }
+})
+afterLabel.addEventListener("click", function () {
+    if (!toggle.checked) {
+        toggle.checked = true
+        updateElems()
+    }
+})
