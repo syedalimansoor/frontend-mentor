@@ -18,9 +18,11 @@ wrapper.addEventListener("mousemove", function (e) {
 
 
     // console.log(rotateX, rotateY);
+    card.style.transition = ""
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
 })
 
 wrapper.addEventListener("mouseout", function () {
+    card.style.transition = "transform 500ms ease 200ms"
     card.style.transform = "rotateX(0) rotateY(0)"
 })
