@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <!-- Attribution -->
+    <script
+      src="https://kit.fontawesome.com/31a888942e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../attr/attr.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="component">
+        <header class="controls">
+          <img src="./images/logo.svg" alt="Fylo logo" class="controls__logo" />
+          <div class="controls__btn-grp">
+            <button class="controls__btn" tabindex="0">
+              <img src="./images/icon-document.svg" alt="New document" />
+            </button>
+            <button class="controls__btn">
+              <img src="./images/icon-folder.svg" alt="New folder" />
+            </button>
+            <button class="controls__btn">
+              <img src="./images/icon-upload.svg" alt="Upload file" />
+            </button>
+          </div>
+        </header>
+        <div class="storage">
+          <div class="storage__popup">
+            <span class="storage__popup-amt">185</span> GB Left
+          </div>
+          <p class="storage__msg">
+            You’ve used <span class="weight-bld">815 GB</span> of your storage
+          </p>
+          <div class="storage__range range">
+            <div class="range__bg">
+              <div class="range__progress">
+                <div class="range__marker"></div>
+              </div>
+            </div>
+            <div class="range__labels">
+              <div class="range__label">0 GB</div>
+              <div class="range__label">1000 GB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="attr">
+      <p class="attr__para">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="attr__link"
+          >Frontend<br />Mentor</a
+        >
+      </p>
+      <hr class="attr__hr" />
+      <p class="attr__para">
+        Coded by
+        <a
+          href="https://www.instagram.com/design.alimansoor"
+          target="_blank"
+          class="attr__link"
+          >Syed Ali<br />Mansoor</a
+        >
+      </p>
+      <div class="attr__btns">
+        <a
+          class="fab fa-github"
+          href="https://www.github.com/alimansoor-create"
+        ></a>
+        <a
+          class="fab fa-instagram"
+          href="https://www.instagram.com/design.alimansoor"
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

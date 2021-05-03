@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.weight-bld {
+  font-weight: 700;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c122c;
+  background-image: url("../images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.component {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 2em;
+}
+.component > * {
+  background-color: #1d2c67;
+  padding: 3em;
+  border-radius: 0.7em;
+  box-shadow: 0 2em 5em rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  padding-right: 9.5em;
+  border-top-right-radius: 7em;
+}
+
+.controls__logo {
+  margin-bottom: 2em;
+}
+
+.controls__btn-grp {
+  display: flex;
+  gap: 1em;
+}
+
+.controls__btn {
+  padding: 1em;
+  background-color: #0c122c;
+  border: 0;
+  border-radius: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition-property: background-color, box-shadow;
+  transition-duration: 200ms;
+}
+.controls__btn:hover {
+  background-color: #121a40;
+}
+.controls__btn:active {
+  transition-duration: 50ms;
+  background-color: inherit;
+  box-shadow: 0 0 0 2px #697ED4;
+}
+.controls__btn:focus-visible {
+  outline: 2px solid #0c122c;
+  outline-offset: 2px;
+}
+
+.storage {
+  color: white;
+  position: relative;
+  width: 39em;
+  perspective: 50em;
+}
+
+.storage__msg {
+  margin-bottom: 1em;
+}
+
+.storage__popup {
+  position: absolute;
+  top: -4em;
+  right: 3rem;
+  background-color: white;
+  padding: 1em 1.7em;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #848794;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  letter-spacing: 0.1em;
+}
+.storage__popup::after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  bottom: -1.5em;
+  right: 0;
+  width: 40px;
+  height: 30px;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.storage__popup-amt {
+  font-size: 3rem;
+  color: black;
+  letter-spacing: 0;
+}
+
+.storage__range {
+  width: 100%;
+}
+
+.range__bg {
+  width: 100%;
+  height: 1.5em;
+  background-color: #151d4c;
+  border-radius: 99em;
+  padding: 0.2em;
+  margin-bottom: 0.8em;
+}
+
+.range__progress {
+  height: 100%;
+  width: 81.5%;
+  background: linear-gradient(to right, #ffa399, #ff4d97);
+  border-radius: 99em;
+  padding: 0.2em;
+}
+
+.range__marker {
+  width: 0.7em;
+  height: 100%;
+  border-radius: 99em;
+  background-color: white;
+  margin-left: auto;
+}
+
+.range__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    background-image: url("../images/bg-mobile.png");
+    background-size: cover;
+    padding: 4em 2em 7em;
+  }
+
+  .component {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 540px;
+  }
+
+  .storage {
+    width: unset;
+  }
+
+  .storage__popup {
+    top: unset;
+    right: unset;
+    bottom: -4em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .storage__popup::after {
+    content: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
