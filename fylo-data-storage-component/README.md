@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: #
-- Live Site URL: https://alimansoor-create.github.io/frontend-mentor/fylo-data-storage-card-component
+- Live Site URL: https://alimansoor-create.github.io/frontend-mentor/fylo-data-storage-component
 
 ## My process
 
