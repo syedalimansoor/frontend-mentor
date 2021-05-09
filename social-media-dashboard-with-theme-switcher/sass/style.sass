@@ -98,6 +98,7 @@
 
 .toggle__checkbox
   appearance: none
+  opacity: 0
 
 .toggle__slider
   position: absolute
@@ -132,6 +133,10 @@
 
 .toggle__checkbox:checked ~ .toggle__slider::before
   left: 3.5em - .2em - 1.3em
+
+.toggle__checkbox:focus-visible ~ .toggle__slider
+  outline: 2px solid var(--txt-clr-secondary)
+  outline-offset: 2px
 
 // Summary section styles
 
