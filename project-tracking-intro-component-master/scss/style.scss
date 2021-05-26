@@ -1,0 +1,132 @@
+@use "colors";
+@use "type";
+
+// Distance of elements from the page's vertical border
+$pad-x: 1.8em;
+
+// Wrapper styles
+
+.wrapper {
+  min-height: 100vh;
+
+  // The following allows us to make the background shape and position it
+  position: relative;
+
+  // The shape is made using a pseudo-element
+  &::before {
+    content: "";
+    width: 50%;
+    height: 23.5em;
+    background-color: colors.$light-grayish-blue;
+    border-bottom-left-radius: 3em;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+// Header styles
+
+.page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.1em $pad-x;
+
+  // To align the popup navigation
+  position: relative;
+}
+
+.page__logo {
+  width: 1.35em;
+}
+
+// Navigation button
+
+.nav-toggle {
+  cursor: pointer;
+}
+.nav-toggle__checkbox {
+  opacity: 0;
+  appearance: none;
+
+  &:focus-visible ~ .nav-toggle__img {
+    outline: 2px solid black;
+    outline-offset: 2px;
+  }
+}
+
+// Popup navigation
+
+.page__nav {
+  display: none;
+  opacity: 0;
+
+  transition: opacity 200ms;
+
+  &.open {
+    display: block;
+    opacity: 1;
+  }
+
+  position: absolute;
+  top: 100%;
+  left: $pad-x;
+  right: $pad-x;
+
+  background-color: white;
+  box-shadow: 0 0.2em 0.5em
+    adjust-color(colors.$dark-grayish-blue, $alpha: -0.5);
+  padding: 1.1em 1em;
+}
+.nav__ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  text-align: center;
+
+  li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: type.$weight-bld;
+
+    // Link hover effects
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transition: 100ms ease;
+    }
+    &:hover::after,
+    &:focus-visible::after {
+      right: 0;
+    }
+  }
+  li:not(.nav__cta) a {
+    color: black;
+  }
+}
+// Login link
+.nav__cta {
+  padding-top: 1.3em;
+  border-top: 2px solid colors.$light-grayish-blue;
+  a {
+    color: colors.$grayish-blue;
+  }
+}
+
+// Main section
+
+.page__main {
+  display: flex;
+  flex-direction: column;
+}
