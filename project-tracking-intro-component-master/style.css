@@ -47,8 +47,8 @@
 }
 
 .page__nav {
-  display: none;
   opacity: 0;
+  visibility: hidden;
   transition: opacity 200ms;
   position: absolute;
   top: 100%;
@@ -59,7 +59,7 @@
   padding: 1.1em 1em;
 }
 .page__nav.open {
-  display: block;
+  visibility: visible;
   opacity: 1;
 }
 
