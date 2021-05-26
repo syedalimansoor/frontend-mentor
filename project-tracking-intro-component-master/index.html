@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Project tracking intro component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Product
-  Features
-  Pricing
-  Login
+    <title>Frontend Mentor | Project tracking intro component</title>
 
-  New
-  Monograph Dashboard
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css" />
 
-  Powerful insights into your team
-  Project planning and time tracking for agile teams
+    <!-- Attribution -->
+    <script
+      src="https://kit.fontawesome.com/31a888942e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../attr/attr.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="page__header">
+        <a href="#"
+          ><img
+            src="./images/logo.svg"
+            alt="Project tracking logo"
+            class="page__logo"
+        /></a>
+        <label class="nav-toggle">
+          <input type="checkbox" class="nav-toggle__checkbox" /><img
+            src="./images/icon-hamburger.svg"
+            alt="Open navigation"
+            class="nav-toggle__img"
+          />
+        </label>
+        <nav class="page__nav nav">
+          <ul class="nav__ul">
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li class="nav__cta"><a href="#">Login</a></li>
+          </ul>
+        </nav>
+      </header>
 
-  Schedule a demo
-  to see a live preview
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+      <main class="page__main">
+        <img
+          src="./images/illustration-devices.svg"
+          alt="A mockup of our dashboard"
+          class="page__header-img"
+        />
+        <section class="intro">
+          <h2 class="intro__eyebrow">
+            <span class="intro__badge">New</span> Monograph Dashboard
+          </h2>
+          <h1 class="intro__heading">Powerful insights into your team</h1>
+          <p class="intro__para">
+            Project planning and time tracking for agile teams
+          </p>
+          <button class="intro__cta">Schedule a demo</button>
+          <span class="intro__after-cta">to see a live preview</span>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+
+    <!-- Attribution -->
+    <footer class="attr">
+      <p class="attr__para">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="attr__link"
+          >Frontend<br />Mentor</a
+        >
+      </p>
+      <hr class="attr__hr" />
+      <p class="attr__para">
+        Coded by
+        <a
+          href="https://www.instagram.com/design.alimansoor"
+          target="_blank"
+          class="attr__link"
+          >Syed Ali<br />Mansoor</a
+        >
+      </p>
+      <div class="attr__btns">
+        <a
+          class="fab fa-github"
+          href="https://www.github.com/alimansoor-create"
+        ></a>
+        <a
+          class="fab fa-instagram"
+          href="https://www.instagram.com/design.alimansoor"
+        ></a>
+      </div>
+    </footer>
+  </body>
 </html>

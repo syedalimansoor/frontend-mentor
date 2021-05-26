@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
+
+$font-pri: "Barlow Condensed", sans-serif;
+$font-sec: "Barlow", sans-serif;
+
+$size-reg: 18px;
+
+$weight-reg: 400;
+$weight-bld: 700;
+
+:root {
+  font-family: $font-pri;
+  font-weight: $weight-reg;
+  font-size: $size-reg;
+}
