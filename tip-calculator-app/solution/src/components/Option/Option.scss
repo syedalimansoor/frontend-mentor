@@ -1,0 +1,35 @@
+@import "../../styles/colors";
+@import "../../styles/typography";
+
+.Option__content {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: $white;
+  background-color: $very-dark-cyan;
+  border-radius: 0.2em;
+  padding: 0.2em;
+  text-align: center;
+  font-weight: $weight-bld;
+  transition: {
+    property: color background-color;
+    duration: 100ms;
+    timing-function: ease;
+  }
+  cursor: pointer;
+
+  &:hover {
+    color: $very-dark-cyan;
+    background-color: $hover-cyan;
+  }
+}
+
+.Option__radio {
+  appearance: none;
+  opacity: 0;
+
+  &:checked ~ .Option__content {
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+  }
+}

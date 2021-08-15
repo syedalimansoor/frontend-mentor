@@ -1,0 +1,49 @@
+@import "../../styles/colors";
+@import "../../styles/typography";
+
+.CalculatorOutput {
+  background-color: $very-dark-cyan;
+  border-radius: 0.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.CalculatorOutput__reset {
+  background-color: $strong-cyan;
+  font: inherit;
+  font-weight: $weight-bld;
+  color: $very-dark-cyan;
+  border: none;
+  border-radius: 0.2em;
+  padding: 0.2em;
+  cursor: pointer;
+  margin-block-start: auto;
+  transition: {
+    property: background-color, box-shadow, transform;
+    duration: 100ms;
+    timing-function: ease;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $hover-cyan;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+  &:active:not(:disabled) {
+    transition-duration: 50ms;
+    box-shadow: none;
+    transform: none;
+  }
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .CalculatorOutput {
+    padding: 2em;
+  }
+}

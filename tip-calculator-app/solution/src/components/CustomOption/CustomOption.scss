@@ -1,0 +1,21 @@
+@import "../../styles/colors";
+@import "../../styles/typography";
+
+.CustomOption {
+  appearance: textfield;
+  border: none;
+  text-align: right;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: $weight-bld;
+  color: $very-dark-cyan;
+  width: 100%;
+  height: 100%;
+  background: $light-grayish-cyan-2;
+  border-radius: 0.2em;
+  padding: 0.2em 0.75em 0.2em 0.2em;
+
+  &:focus-visible {
+    outline: 2px solid $strong-cyan;
+  }
+}

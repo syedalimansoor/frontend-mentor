@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+@import "../../styles/typography";
+
+.Calculator {
+  background-color: $white;
+  border: {
+    start-start-radius: 1em;
+    start-end-radius: 1em;
+  }
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 1100px) {
+  .Calculator {
+    border-radius: 1em;
+    flex-direction: row;
+    max-width: 920px;
+    padding: 1.5em;
+    gap: 2em;
+    > * {
+      flex-basis: 50%;
+    }
+  }
+}
