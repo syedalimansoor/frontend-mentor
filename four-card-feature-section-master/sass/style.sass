@@ -1,0 +1,123 @@
+@use "type"
+@use "colors"
+
+// Reset
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+// Wrapper styles
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.tools
+    margin: 4em 2em
+    max-width: 450px
+
+// Section header styles
+
+.tools header
+    margin-bottom: 4em
+    text-align: center
+
+.tools__heading, .tools__subheading
+    font-size: 1.6rem
+
+.tools__subheading
+    font-weight: type.$weight-thin
+
+.tools__heading
+    margin-bottom: .8em
+
+.tools__intro
+    margin: 0 auto
+    max-width: 55ch
+
+.tools p
+    color: colors.$grayish-blue
+
+// Card container styles
+
+.tools__cards
+    display: grid
+    gap: 2em
+
+// Card styles
+
+.card
+    background-color: white
+    border-radius: .5em
+    box-shadow: 0 .5em 1em adjust-color(colors.$grayish-blue, $alpha:-0.5)
+    border-top: 4px solid
+    padding: 2em
+    padding-top: 1.5em
+    display: grid
+
+    transition: transform 300ms ease
+    &:hover
+        transform: scale(102%)
+        cursor: pointer
+    &:active
+        transition: transform 50ms ease
+        transform: none
+
+.card__heading
+    font-size: 1.4rem
+    margin-bottom: .2em
+
+.card__descr
+    font-size: .8rem
+    line-height: 1.8em
+    margin-bottom: 2em
+
+.card__icon
+    align-self: end
+    justify-self: end
+
+// Tool-specific card styles
+
+#supervisor
+    border-top-color: colors.$cyan
+#teamBuilder
+    border-top-color: colors.$red
+#karma
+    border-top-color: colors.$orange
+#calculator
+    border-top-color: colors.$blue
+
+// Tablet size; 2x2 grid
+
+@media (min-width: 700px)
+    .tools
+        max-width: 800px
+
+    .tools__cards
+        grid-template-columns: repeat(2, 1fr)
+
+// Desktop size; 3x5 grid
+
+@media (min-width: 1050px)
+    .tools
+        max-width: 1100px
+
+    .tools__heading, .tools__subheading
+        font-size: 2.4rem
+        line-height: 1.4em
+
+    .tools__cards
+        grid-template-columns: repeat(3, 1fr )
+        grid-template-rows: repeat(4, 1fr)
+
+    #supervisor, #calculator
+        grid-row: 2 / 4
+    #teamBuilder
+        grid-row: 1 / 3
+    #karma
+        grid-row: 3 / 5

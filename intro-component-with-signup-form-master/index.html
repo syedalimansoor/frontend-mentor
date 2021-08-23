@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Intro component with sign up form | Frontend Mentor</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="css/attribution.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <section id="signup">
+        <header id="signup-intro">
+          <h2 id="signup-intro__heading">Learn to code by watching others</h2>
+          <p id="signup-intro__subtext">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </header>
+        <div id="signup-reg">
+          <div id="signup-reg__caption">
+            <span class="text-semi">Try it free 7 days</span> then $20/mo.
+            thereafter
+          </div>
+          <form
+            action="#"
+            id="signup-reg__form"
+            method="GET"
+            novalidate
+            autocomplete="off"
+          >
+            <div class="signup-reg__field">
+              <input
+                type="text"
+                name="First Name"
+                id="signup-reg__fname"
+                class="signup-reg__input"
+                placeholder="First Name"
+                title="First Name"
+                required
+              />
+              <div class="signup-reg__error">
+                <img
+                  src="images/icon-error.svg"
+                  alt="Invalid form entry"
+                  class="signup-reg__error-icon"
+                />
+              </div>
+            </div>
+            <div class="signup-reg__field">
+              <input
+                type="text"
+                name="Last Name"
+                id="signup-reg__lname"
+                class="signup-reg__input"
+                placeholder="Last Name"
+                title="Last Name"
+                required
+              />
+              <div class="signup-reg__error">
+                <img
+                  src="images/icon-error.svg"
+                  alt="Invalid form entry"
+                  class="signup-reg__error-icon"
+                />
+              </div>
+            </div>
+            <div class="signup-reg__field">
+              <input
+                type="email"
+                name="Email Address"
+                id="signup-reg__email"
+                class="signup-reg__input"
+                placeholder="Email Address"
+                title="Email Address"
+                required
+              />
+              <div class="signup-reg__error">
+                <img
+                  src="images/icon-error.svg"
+                  alt="Invalid form entry"
+                  class="signup-reg__error-icon"
+                />
+              </div>
+            </div>
+            <div class="signup-reg__field">
+              <input
+                type="password"
+                name="Password"
+                id="signup-reg__password"
+                class="signup-reg__input"
+                placeholder="Password"
+                title="Password"
+                required
+              />
+              <div class="signup-reg__error">
+                <img
+                  src="images/icon-error.svg"
+                  alt="Invalid form entry"
+                  class="signup-reg__error-icon"
+                />
+              </div>
+            </div>
+            <button id="signup-reg__submit" type="submit" title="Submit">
+              Claim your free trial
+            </button>
+            <footer id="signup-reg__tos">
+              By clicking the button, you are agreeing to our
+              <a href="#">Terms and Services</a>
+            </footer>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.instagram.com/design.alimansoor" target="_blank"
+          >Syed Ali Mansoor</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  color: #1d1e35;
+}
+
+main {
+  background-color: #af67e9;
+  background-image: linear-gradient(to top right, #6565e7, #af67e9);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 80rem;
+  background-color: white;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 2em;
+  padding: 2em;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.faqs__heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.faqs__list {
+  margin: 1em 0;
+}
+
+.faqs__listitem {
+  padding: 1.2em 0;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.faqs__question {
+  transition: all 200ms ease;
+}
+
+.faqs__answer {
+  color: #787887;
+  max-height: 0;
+  overflow: hidden;
+  line-height: 1.2em;
+  transition: all 200ms ease;
+}
+
+.faqs__expand {
+  float: right;
+  margin-left: 2em;
+}
+
+.faqs__listitem:hover {
+  cursor: pointer;
+}
+.faqs__listitem:hover .faqs__question {
+  color: #f47c57;
+}
+
+.faqs__listitem--active .faqs__question {
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+.faqs__listitem--active .faqs__answer {
+  max-height: 4em;
+}
+.faqs__listitem--active .faqs__expand {
+  transform: rotate(180deg);
+}
+
+.illustration {
+  margin-top: -110px;
+  height: 20em;
+  background-image: url("../images/illustration-woman-online-mobile.svg"), url("../images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top center, top 110px center;
+}
+
+.illustration__box {
+  display: none;
+}
+
+@media (min-width: 762px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    padding-right: 4em;
+  }
+
+  .faqs {
+    width: 50%;
+    margin-left: 4em;
+  }
+
+  .illustration {
+    width: 50%;
+  }
+
+  .faqs__heading {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+  .illustration {
+    position: relative;
+    margin: 0;
+    min-height: 40em;
+    background-image: url("../images/illustration-woman-online-desktop.svg"), url("../images/bg-pattern-desktop.svg");
+    background-position: center left -80px, center left -570px;
+  }
+
+  .illustration__box {
+    position: absolute;
+    display: initial;
+    background-image: url("../images/illustration-box-desktop.svg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: -95px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

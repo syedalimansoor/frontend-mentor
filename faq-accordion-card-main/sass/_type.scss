@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$root-size: 12px;
+$body-copy: "Kumbh Sans", sans-serif;
+
+$regular: 400;
+$bold: 700;
+
+:root {
+    font-size: $root-size;
+    font-family: $body-copy;
+    font-weight: $regular;
+}

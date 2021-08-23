@@ -1,0 +1,302 @@
+@use "colors";
+@use "type";
+
+// Distance of elements from the page's vertical border
+$pad-x: 1.8rem;
+$pad-x-desktop: 9.2em;
+
+// Wrapper styles
+
+.wrapper {
+  min-height: 100vh;
+
+  // The following allows us to make the background shape and position it
+  position: relative;
+
+  // The shape is made using a pseudo-element
+  &::before {
+    content: "";
+    width: 50%;
+    height: 23.5em;
+    background-color: colors.$light-grayish-blue;
+    border-bottom-left-radius: 3em;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+// Header styles
+
+.page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.1em $pad-x;
+
+  // To align the popup navigation
+  position: relative;
+}
+
+.page__logo {
+  width: 1.35em;
+}
+
+// Navigation button
+
+.nav-toggle {
+  cursor: pointer;
+}
+.nav-toggle__checkbox {
+  opacity: 0;
+  appearance: none;
+
+  &:focus-visible ~ .nav-toggle__img {
+    outline: 2px solid black;
+    outline-offset: 2px;
+  }
+}
+
+// Popup navigation
+
+.page__nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  position: absolute;
+  top: 100%;
+  left: $pad-x;
+  right: $pad-x;
+
+  background-color: white;
+  box-shadow: 0 0.2em 0.5em
+    adjust-color(colors.$dark-grayish-blue, $alpha: -0.5);
+  padding: 1.1em 1em;
+}
+.nav__ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  text-align: center;
+
+  li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: type.$weight-bld;
+
+    // Link hover effects
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transition: 100ms ease;
+    }
+    &:hover::after,
+    &:focus-visible::after {
+      right: 0;
+    }
+  }
+  li:not(.nav__cta) a {
+    color: black;
+  }
+}
+// Login link
+.nav__cta {
+  padding-top: 1.3em;
+  border-top: 2px solid colors.$light-grayish-blue;
+  a {
+    color: colors.$grayish-blue;
+  }
+}
+
+// Main section
+
+.page__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.75em;
+  overflow: hidden;
+  padding-bottom: 4em;
+}
+
+// Header image
+
+.page__header-img {
+  margin: {
+    top: 1em;
+    left: auto;
+    right: auto;
+  }
+  width: 135%;
+  max-width: 640px;
+  filter: drop-shadow(0 1em 2em rgba(0, 0, 0, 0.1));
+  z-index: -1;
+  align-self: start;
+}
+
+// Header content
+
+.intro {
+  padding: {
+    left: $pad-x;
+    right: $pad-x;
+  }
+}
+
+.intro__eyebrow {
+  font-size: 0.9rem;
+  font-weight: type.$weight-reg;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: colors.$grayish-blue;
+
+  display: flex;
+  align-items: center;
+  gap: 0.95em;
+
+  margin-bottom: 0.8em;
+}
+.intro__badge {
+  color: white;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: type.$weight-bld;
+  background-color: colors.$very-dark-blue;
+  padding: 0.275em 0.7em;
+  border-radius: 99em;
+}
+
+.intro__heading {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  line-height: 1.05em;
+  color: colors.$very-dark-blue;
+  margin-bottom: 0.4em;
+}
+
+.intro__para {
+  font-family: type.$font-sec;
+  color: colors.$dark-grayish-blue;
+  line-height: 1.5em;
+  margin-bottom: 1.35em;
+}
+
+.intro__cta {
+  font: inherit;
+  font-size: 0.765rem;
+  font-weight: type.$weight-bld;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: white;
+  background-color: colors.$red;
+  padding: 0.9em 1.5em;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+
+  margin-right: 1em;
+
+  transition: background-color 200ms ease;
+  &:hover {
+    background-color: adjust-color($color: colors.$red, $lightness: 10%);
+  }
+  &:focus-visible {
+    outline: 2px solid colors.$red;
+    outline-offset: 2px;
+  }
+}
+.intro__after-cta {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: colors.$grayish-blue;
+}
+
+@media screen and (min-width: 980px) {
+  .page__header {
+    padding: 3.5em $pad-x-desktop;
+    margin-bottom: 2.5em;
+  }
+  .page__logo {
+    width: 1.8em;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .page__nav {
+    visibility: visible;
+    opacity: 1;
+    background-color: transparent;
+    box-shadow: none;
+    position: static;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+  $nav-gap: 3.3em;
+  .nav__ul {
+    flex-direction: row;
+    gap: $nav-gap;
+  }
+  .nav__cta {
+    padding-top: 0;
+    border-top: none;
+    margin-left: $nav-gap;
+
+    position: relative;
+    &::before {
+      content: "";
+      background-color: colors.$grayish-blue;
+      width: 5px;
+      height: 5px;
+      border-radius: 99em;
+      position: absolute;
+      top: 50%;
+      left: -$nav-gap;
+      transform: translateY(-50%);
+    }
+  }
+
+  .page__main {
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 0 0 4em $pad-x-desktop;
+  }
+
+  .page__header-img {
+    margin: unset;
+    order: 2;
+    max-width: 54em;
+    margin-right: -15.5em;
+  }
+
+  .intro {
+    padding: unset;
+  }
+  .intro__heading {
+    font-size: 3.55rem;
+  }
+  .intro__para {
+    margin-bottom: 3.5em;
+  }
+  .intro__cta {
+    padding-inline: 2.6em;
+  }
+}

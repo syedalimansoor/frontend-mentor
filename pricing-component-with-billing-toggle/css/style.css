@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f6fe;
+  background-image: url("../images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: top -30px right -200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title, .toggle {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 2.2em 0 1.2em;
+  color: #6d708d;
+}
+
+.toggle {
+  margin-bottom: 5em;
+}
+.toggle__label {
+  color: #b3b5c6;
+  cursor: pointer;
+}
+.toggle__switch {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 30px;
+  margin: 0 1em;
+}
+.toggle__checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle__checkbox:checked + .toggle__slider::before {
+  transform: translateX(22px);
+}
+.toggle__checkbox:focus + .toggle__slider {
+  outline: 1px solid #494c5f;
+  outline-offset: 2px;
+}
+.toggle__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 99em;
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  cursor: pointer;
+}
+.toggle__slider::before {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  left: 4px;
+  top: 4px;
+  background-color: white;
+  border-radius: 99em;
+  transition: transform 200ms ease;
+}
+
+.pricing-tiers {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 30em;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 5em;
+}
+
+.card {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1em 2em rgba(179, 181, 198, 0.3);
+  padding: 2em;
+  text-align: center;
+  color: #6d708d;
+}
+.card__title {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+}
+.card__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: #494c5f;
+  margin-bottom: 0.5em;
+}
+.card__price-figure {
+  margin-left: 5px;
+  font-size: 5rem;
+}
+.card__features {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+.card__features li {
+  padding: 1.2em;
+  border-top: 1px solid #b3b5c6;
+}
+.card__features li:last-child {
+  border-bottom: 1px solid #b3b5c6;
+}
+.card__cta {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 1.3em;
+  border: 0;
+  border-radius: 5px;
+  background-color: #696fdd;
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: white;
+  cursor: pointer;
+  transition-property: outline, background, color;
+  transition-duration: 200ms;
+}
+.card__cta:hover {
+  background: rgba(0, 0, 0, 0);
+  color: #696fdd;
+  outline: 1px solid currentColor;
+}
+.card__cta:focus {
+  box-shadow: 0 0 0 4px currentColor;
+}
+.card--recommended {
+  background: linear-gradient(to bottom, #a3a8f0, #696fdd);
+  color: white;
+}
+.card--recommended .card__price {
+  color: white;
+}
+.card--recommended .card__cta {
+  background: white;
+  color: #696fdd;
+}
+.card--recommended .card__cta:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+@media screen and (min-width: 1150px) {
+  .wrapper {
+    background-image: url("../images/bg-bottom.svg"), url("../images/bg-top.svg");
+    background-position: bottom left -40px, top right;
+  }
+
+  .pricing-tiers {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    max-width: 72em;
+  }
+
+  .card {
+    padding-top: 2.6em;
+  }
+  .card__price {
+    margin-bottom: 0.7em;
+  }
+  .card:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .card--recommended {
+    padding-top: 4em;
+    padding-bottom: 3.4em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,126 @@
+@use "type"
+@use "colors"
+
+// Reset
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+// Wrapper styles
+
+.wrapper
+    width: 100%
+    min-height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+
+.pitch
+    margin: 4em 2em
+    display: grid
+    border-radius: .4em
+    overflow: hidden
+    box-shadow: 0 1em 3em adjust-color(colors.$grayish-blue, $alpha:-0.5)
+    max-width: 400px
+
+// Card section styles
+
+.pitch__sec
+    padding: 1.5em
+    display: grid
+
+#pitchIntro
+    background-color: white
+#pitchPricing
+    background-color: colors.$cyan
+#pitchDetails
+    background-color: adjust-color(colors.$cyan, $lightness: 3%)
+
+#pitchPricing, #pitchDetails
+    color: white
+
+// Intro section styles
+
+.pitch__title
+    font-size: 1.4rem
+    color: colors.$cyan
+    margin-bottom: 1em
+    font-weight: type.$weight-bold
+
+.pitch__subtitle
+    font-size: 1.1rem
+    color: colors.$bright-yellow
+    margin-bottom: 1em
+    font-weight: type.$weight-bold
+
+.pitch__info
+    line-height: 1.6em
+
+// Pricing section styles
+
+.pitch__sec-title
+    font-size: 1.2rem
+    font-weight: type.$weight-bold
+    margin-bottom: .8em
+
+.pitch__rate
+    color: adjust-color(white, $alpha: -.5)
+    margin-bottom: .2em
+
+.pitch__price
+    font-style: normal
+    color: white
+    font-size: 2rem
+    font-weight: type.$weight-bold
+    vertical-align: middle
+    margin-right: .3em
+
+.pitch__price-info
+    margin-bottom: 1.5em
+
+.pitch__signup-btn
+    font-family: inherit
+    color: inherit
+    font-weight: type.$weight-bold
+    font-size: inherit
+    border: none
+    outline: none
+    width: 100%
+    background-color: colors.$bright-yellow
+    padding: 1em
+    border-radius: .4em
+    box-shadow: 0 .5em 1em adjust-color(black, $alpha:-0.8)
+    cursor: pointer
+    transition: 200ms ease
+
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 1em 1em adjust-color(black, $alpha:-0.8)
+
+    &:active
+        transition: all 50ms ease
+        transform: none
+        box-shadow: none
+        background-color: inherit
+        padding: .8em
+        border: 4px solid colors.$bright-yellow
+
+// Why us section styles
+
+.pitch__details-list
+    list-style-type: none
+    line-height: 1.5em
+    color: adjust-color(white, $alpha: -.4)
+
+@media (min-width: 730px)
+    .pitch
+        grid-template-columns: repeat(2, 1fr)
+        max-width: 765px
+
+    .pitch__sec
+        padding: 2.5em
+
+    #pitchIntro
+        grid-column: 1 / 3

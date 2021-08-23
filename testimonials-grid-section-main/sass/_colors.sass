@@ -1,0 +1,46 @@
+// Primary
+$moderate-violet: hsl(263, 55%, 52%)
+$very-dark-grayish-blue: hsl(217, 19%, 35%)
+$very-dark-blackish-blue: hsl(219, 29%, 14%)
+$white: hsl(0, 0%, 100%)
+
+// Neutral
+$light-gray: hsl(0, 0%, 81%)
+$light-grayish-blue: hsl(210, 46%, 95%)
+
+// Designation: 50% opacity
+// Paras: 70% opacity
+
+:root
+    color: $white
+
+.wrapper
+    background-color: $light-grayish-blue
+
+.testimonials__author-image
+    border: 2px solid adjust-color($white, $alpha: -0.5)
+.testimonials__author-des
+    color: adjust-color($white, $alpha: -0.5)
+.testimonials__quote
+    color: adjust-color($white, $alpha: -0.3)
+
+.violet
+    background-color: $moderate-violet
+
+.grayish-blue
+    background-color: $very-dark-grayish-blue
+
+.blackish-blue
+    background-color: $very-dark-blackish-blue
+
+.white
+    background-color: $white
+    color: $very-dark-blackish-blue
+    .testimonials__author-image
+        border: 2px solid adjust-color($very-dark-blackish-blue, $alpha: -0.5)
+    .testimonials__author-des
+        color: adjust-color($very-dark-blackish-blue, $alpha: -0.5)
+    .testimonials__quote
+        color: adjust-color($very-dark-blackish-blue, $alpha: -0.3)
+    
+    
