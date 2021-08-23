@@ -6,17 +6,13 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -28,85 +24,60 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Calculate the correct tip and total cost of the bill per person
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop screenshot](./screenshot-desktop.png)
+![Mobile screenshot](./screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution](#)
+- [Live Site](https://alimansoor-create.github.io/frontend-mentor/tip-calculator-app)
 
 ## My process
 
 ### Built with
 
+- [Create React App](https://create-react-app.dev)
+- [React](https://reactjs.org/) - Class-based components
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was my first project with React and I am really intrigued by the power of this library/framework. The usage of components has helped me a lot in simplifying my workflow, and the fact that all form data is stored in state makes calculations from the data a breeze. I also love how components can be reused and I have tried my best to make ones that can be reused properly.
 
-To see how you can add code snippets, see below:
+#### App structure
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+- Calculator - Base component; stores form input data in state
+  - CalculatorForm - Stateless; renders a form which collects data and passes it to _\<Calculator>_
+    - Input - Stateless; renders a label, an input element, and conditional error message
+    - Selector - Renders a list of _\<Option>s_ and a _\<CustomOption>_
+      - Option x 5 - Stateless; renders a radio button styled to look like a normal button
+      - CustomOption - Stateless; renders an input element
+    - Input
+  - CalculatorOutput - Renders the calculation results and a button to reset the form
+    - Output x 2 - Stateless; renders a label and a calculated figure
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+#### Features
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Form input values are stored in the base _\<Calculator>_ component. This is updated every time an input is changed. All inputs are controlled by React.
+- On change, the _\<Calculator>_ component calculates figures for tip amount/person and total/person, and passes these to the _\<CalculatorOutput>_ component.
+- The _\<Selector>_ component includes a text input along with the radio buttons. When this input is focused on, `state.isEditing` changes to `true` and the radio buttons are prevented from being selected as the user types in the percentage.
+- When the same input is blurred, if the user types in a value already present among the radio options, the respective radio button is selected and the text input is cleared.
+- If the user enters a negative number in any of the two _\<Input>_ components, an error message appears in red.
+- NaN and Infinity errors are handled, and default to output values of $0.00.
+- The app is responsive even to the narrowest of screens. (260px, to be specific)
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+I made this project using class-based components, and I want to do my next one with functional components and hooks, so I aim to learn more about those next up.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+**Syed Ali Mansoor**
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Instagram - [@design.alimansoor](https://www.instagram.com/design.alimansoor)
+- Frontend Mentor - [@alimansoor-create](https://www.frontendmentor.io/profile/alimansoor-create)
