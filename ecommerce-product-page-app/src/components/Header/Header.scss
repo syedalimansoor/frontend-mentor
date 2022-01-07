@@ -1,0 +1,44 @@
+@use "../../styles/colors";
+
+.Header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1.2em 1.5em;
+  position: relative;
+
+  &__toggle-nav,
+  &__toggle-cart {
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    outline: {
+      offset: 2px;
+    }
+  }
+
+  &__logo {
+    transform: translateY(-1px);
+  }
+
+  &__toggle-cart {
+    margin-left: auto;
+    margin-right: 0.4em;
+  }
+
+  &__avatar {
+    box-sizing: border-box;
+    height: calc(1.5em + 2px);
+    border: solid 2px transparent;
+    border-radius: 99em;
+    transition: border-color 100ms;
+    cursor: pointer;
+
+    &:hover {
+      border-color: colors.$orange;
+    }
+  }
+}

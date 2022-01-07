@@ -1,0 +1,126 @@
+@use "../../../styles/typography";
+@use "../../../styles/colors";
+
+.Navigation {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+    animation: fade-in 300ms;
+  }
+
+  &__wrapper {
+    height: 100%;
+    width: 15.5em;
+    background-color: white;
+    animation: slide-in 300ms;
+    padding: 1.5em;
+  }
+
+  &__close-btn {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4em;
+    cursor: pointer;
+    outline: {
+      offset: 2px;
+      color: colors.$very-dark-blue;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em;
+    font-size: 1.1rem;
+    font-weight: typography.$weight-bld;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: colors.$very-dark-blue;
+    position: relative;
+    outline: none;
+    overflow: hidden;
+
+    span {
+      display: block;
+      transition: transform 50ms;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      left: 0;
+      width: 0;
+      background-color: colors.$very-dark-blue;
+      transition: width 50ms;
+    }
+
+    &:focus,
+    &:hover {
+      span {
+        transform: translateX(20px);
+      }
+
+      &::after {
+        width: 4px;
+      }
+    }
+  }
+}
+
+.slide-out {
+  animation: slide-out 300ms forwards;
+}
+.fade-out::before {
+  animation: fade-out 300ms forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: none;
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
