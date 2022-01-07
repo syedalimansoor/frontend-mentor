@@ -65,7 +65,8 @@
       inset-block: 0;
       left: 0;
       width: 0;
-      background-color: colors.$very-dark-blue;
+      background-color: colors.$orange;
+      border-radius: 0 99em 99em 0;
       transition: width 50ms;
     }
 
