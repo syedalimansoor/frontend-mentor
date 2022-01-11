@@ -20,16 +20,23 @@
     width: 15.5em;
     background-color: white;
     animation: slide-in 300ms;
-    padding: 1.5em;
+    // padding-block: 1.5em;
+    display: grid;
+    // grid-template-columns: 1.5em 1fr 1.5em;
+    // grid-template-rows: auto;
+    grid-template:
+      ". . ." 1.5em
+      ". close-btn ." auto
+      "list list list" 1fr
+      / 1.5em 1fr 1.5em;
   }
 
   &__close-btn {
     appearance: none;
     border: none;
     background-color: transparent;
-    display: flex;
-    align-items: center;
-    margin-bottom: 4em;
+    grid-area: close-btn;
+    justify-self: start;
     cursor: pointer;
     outline: {
       offset: 2px;
@@ -38,16 +45,16 @@
   }
 
   &__list {
+    grid-area: list;
+    margin-top: 2.3em;
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.4em;
     font-size: 1.1rem;
     font-weight: typography.$weight-bld;
   }
 
   &__link {
     display: block;
+    padding-block: 0.7em;
     text-decoration: none;
     color: colors.$very-dark-blue;
     position: relative;
@@ -56,7 +63,7 @@
 
     span {
       display: block;
-      transition: transform 50ms;
+      margin-left: 1.5em;
     }
 
     &::after {
@@ -72,10 +79,6 @@
 
     &:focus,
     &:hover {
-      span {
-        transform: translateX(20px);
-      }
-
       &::after {
         width: 4px;
       }
