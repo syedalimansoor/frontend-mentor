@@ -1,28 +1,26 @@
 {
   "files": {
-    "main.css": "/alimansoor-create/frontend-mentor/static/css/main.272efa9f.chunk.css",
-    "main.js": "/alimansoor-create/frontend-mentor/static/js/main.6532acdf.chunk.js",
-    "main.js.map": "/alimansoor-create/frontend-mentor/static/js/main.6532acdf.chunk.js.map",
-    "runtime-main.js": "/alimansoor-create/frontend-mentor/static/js/runtime-main.6eac48b4.js",
-    "runtime-main.js.map": "/alimansoor-create/frontend-mentor/static/js/runtime-main.6eac48b4.js.map",
-    "static/js/2.f7b55f02.chunk.js": "/alimansoor-create/frontend-mentor/static/js/2.f7b55f02.chunk.js",
-    "static/js/2.f7b55f02.chunk.js.map": "/alimansoor-create/frontend-mentor/static/js/2.f7b55f02.chunk.js.map",
-    "static/js/3.b8703416.chunk.js": "/alimansoor-create/frontend-mentor/static/js/3.b8703416.chunk.js",
-    "static/js/3.b8703416.chunk.js.map": "/alimansoor-create/frontend-mentor/static/js/3.b8703416.chunk.js.map",
-    "index.html": "/alimansoor-create/frontend-mentor/index.html",
-    "static/css/main.272efa9f.chunk.css.map": "/alimansoor-create/frontend-mentor/static/css/main.272efa9f.chunk.css.map",
-    "static/js/2.f7b55f02.chunk.js.LICENSE.txt": "/alimansoor-create/frontend-mentor/static/js/2.f7b55f02.chunk.js.LICENSE.txt",
-    "static/media/icon-cart.539ec608.svg": "/alimansoor-create/frontend-mentor/static/media/icon-cart.539ec608.svg",
-    "static/media/icon-close.c3904486.svg": "/alimansoor-create/frontend-mentor/static/media/icon-close.c3904486.svg",
-    "static/media/icon-delete.1fd1f1f7.svg": "/alimansoor-create/frontend-mentor/static/media/icon-delete.1fd1f1f7.svg",
-    "static/media/icon-menu.c6107d03.svg": "/alimansoor-create/frontend-mentor/static/media/icon-menu.c6107d03.svg",
-    "static/media/logo.4fe9c1e8.svg": "/alimansoor-create/frontend-mentor/static/media/logo.4fe9c1e8.svg",
-    "static/media/Attribution.scss": "/alimansoor-create/frontend-mentor/static/media/pattern-mobile.ea10ceb0.svg"
+    "main.css": "/frontend-mentor/ecommerce-product-page-app/static/css/main.2a60b146.chunk.css",
+    "main.js": "/frontend-mentor/ecommerce-product-page-app/static/js/main.e24f7ebf.chunk.js",
+    "main.js.map": "/frontend-mentor/ecommerce-product-page-app/static/js/main.e24f7ebf.chunk.js.map",
+    "runtime-main.js": "/frontend-mentor/ecommerce-product-page-app/static/js/runtime-main.e048ab25.js",
+    "runtime-main.js.map": "/frontend-mentor/ecommerce-product-page-app/static/js/runtime-main.e048ab25.js.map",
+    "static/js/2.f7b55f02.chunk.js": "/frontend-mentor/ecommerce-product-page-app/static/js/2.f7b55f02.chunk.js",
+    "static/js/2.f7b55f02.chunk.js.map": "/frontend-mentor/ecommerce-product-page-app/static/js/2.f7b55f02.chunk.js.map",
+    "index.html": "/frontend-mentor/ecommerce-product-page-app/index.html",
+    "static/css/main.2a60b146.chunk.css.map": "/frontend-mentor/ecommerce-product-page-app/static/css/main.2a60b146.chunk.css.map",
+    "static/js/2.f7b55f02.chunk.js.LICENSE.txt": "/frontend-mentor/ecommerce-product-page-app/static/js/2.f7b55f02.chunk.js.LICENSE.txt",
+    "static/media/icon-cart.539ec608.svg": "/frontend-mentor/ecommerce-product-page-app/static/media/icon-cart.539ec608.svg",
+    "static/media/icon-close.c3904486.svg": "/frontend-mentor/ecommerce-product-page-app/static/media/icon-close.c3904486.svg",
+    "static/media/icon-delete.1fd1f1f7.svg": "/frontend-mentor/ecommerce-product-page-app/static/media/icon-delete.1fd1f1f7.svg",
+    "static/media/icon-menu.c6107d03.svg": "/frontend-mentor/ecommerce-product-page-app/static/media/icon-menu.c6107d03.svg",
+    "static/media/logo.4fe9c1e8.svg": "/frontend-mentor/ecommerce-product-page-app/static/media/logo.4fe9c1e8.svg",
+    "static/media/Attribution.scss": "/frontend-mentor/ecommerce-product-page-app/static/media/pattern-mobile.ea10ceb0.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6eac48b4.js",
+    "static/js/runtime-main.e048ab25.js",
     "static/js/2.f7b55f02.chunk.js",
-    "static/css/main.272efa9f.chunk.css",
-    "static/js/main.6532acdf.chunk.js"
+    "static/css/main.2a60b146.chunk.css",
+    "static/js/main.e24f7ebf.chunk.js"
   ]
 }
