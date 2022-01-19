@@ -1,0 +1,33 @@
+@use "../../../colors";
+@use "../../../typography";
+
+.Cart {
+  border-radius: 0.6em;
+  background-color: colors.$white;
+  box-shadow: 0 5px 20px rgba(colors.$black, 0.4);
+  position: absolute;
+  top: calc(100% + 1em);
+  inset-inline: 1em;
+  animation: fade-in 200ms ease;
+
+  &.close {
+    animation: fade-out 200ms ease forwards;
+  }
+
+  &__title {
+    font-size: 1rem;
+    padding: 1.3em;
+    border-bottom: 1px solid colors.$grayish-blue;
+  }
+
+  &__content {
+    min-height: 12em;
+    display: grid;
+    place-items: center;
+  }
+
+  &__empty-msg {
+    font-weight: typography.$weight-bld;
+    color: colors.$dark-grayish-blue;
+  }
+}

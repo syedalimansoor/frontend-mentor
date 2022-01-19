@@ -1,0 +1,29 @@
+.Header {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  padding: 1.2em 1.5em;
+  position: relative;
+
+  button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    :focus {
+      outline: 2px solid orange;
+      outline-offset: 2px;
+    }
+  }
+
+  &__cart-btn {
+    margin-left: auto;
+  }
+
+  &__avatar {
+    height: 1.5em;
+  }
+}

@@ -1,0 +1,76 @@
+@use "../../../colors";
+@use "../../../typography";
+
+.Navigation {
+  position: fixed;
+  inset: 0;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(colors.$black, 0.75);
+    animation: fade-in 200ms ease;
+  }
+  &.close {
+    &::before {
+      animation: fade-out 200ms ease forwards;
+    }
+  }
+
+  &__wrapper {
+    background-color: colors.$white;
+    height: 100%;
+    width: 16em;
+    display: grid;
+    grid-template:
+      ". . ." 1.5em
+      ". close-btn ." auto
+      "nav nav nav" 1fr /
+      1.5em 1fr 1.5em;
+    animation: slide-in-from-left 200ms ease;
+
+    &.close {
+      animation: slide-out-to-left 200ms ease forwards;
+    }
+  }
+
+  &__close-btn {
+    grid-area: close-btn;
+    place-self: center start;
+  }
+
+  &__list {
+    grid-area: nav;
+    list-style-type: none;
+    margin-top: 2em;
+
+    &-link {
+      color: colors.$very-dark-blue;
+      text-decoration: none;
+      font-weight: typography.$weight-bld;
+      font-size: 1.1rem;
+      display: block;
+      position: relative;
+      padding: 0.8em 1.5rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset-block: 0;
+        left: 0;
+        width: 0;
+        background-color: colors.$orange;
+        transition: width 100ms ease;
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          width: 4px;
+        }
+      }
+    }
+  }
+}

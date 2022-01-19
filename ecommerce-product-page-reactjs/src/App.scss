@@ -1,0 +1,17 @@
+@use "./typography";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: typography.$font;
+  font-weight: typography.$weight-reg;
+  font-size: typography.$size-reg;
+}
+
+.App {
+  min-height: 100vh;
+}
