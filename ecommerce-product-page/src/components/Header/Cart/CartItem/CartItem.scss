@@ -1,2 +1,35 @@
+@use "../../../../colors";
+@use "../../../../typography";
+
 .CartItem {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+
+  &__thumbnail {
+    width: 3em;
+    border-radius: 0.3em;
+  }
+
+  &__details {
+    color: colors.$dark-grayish-blue;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-weight: typography.$weight-reg;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 0.2em;
+  }
+
+  &__value {
+    color: colors.$very-dark-blue;
+  }
+
+  &__delete-btn {
+    margin-left: auto;
+  }
 }

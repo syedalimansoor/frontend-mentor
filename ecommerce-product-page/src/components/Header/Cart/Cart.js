@@ -12,12 +12,22 @@ const Cart = forwardRef((props, ref) => {
     setCartItems([]);
   };
 
+  const deleteItem = ({ id }) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
   const items = (
     <>
       {cartItems.map((item) => (
-        <CartItem item={item} />
+        <CartItem
+          key={item.id}
+          item={item}
+          deleteItem={() => deleteItem(item)}
+        />
       ))}
-      <button onClick={checkout}>Checkout</button>
+      <button onClick={checkout} className="Cart__checkout-btn">
+        Checkout
+      </button>
     </>
   );
 

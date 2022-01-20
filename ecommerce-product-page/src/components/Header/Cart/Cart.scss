@@ -7,7 +7,7 @@
   box-shadow: 0 5px 20px rgba(colors.$black, 0.4);
   position: absolute;
   top: calc(100% + 1em);
-  inset-inline: 1em;
+  inset-inline: 1.5em;
   animation: fade-in 200ms ease;
 
   &.close {
@@ -21,13 +21,53 @@
   }
 
   &__content {
-    min-height: 12em;
-    display: grid;
-    place-items: center;
+    min-height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.3em;
+    gap: 1.6em;
   }
 
   &__empty-msg {
     font-weight: typography.$weight-bld;
     color: colors.$dark-grayish-blue;
+  }
+
+  &__checkout-btn {
+    align-self: stretch;
+    background-color: colors.$orange;
+    font: inherit;
+    padding: 1em;
+    justify-content: center;
+    color: colors.$pale-orange;
+    font-weight: typography.$weight-bld;
+    border-radius: 0.4em;
+    box-shadow: 0 0 0 adjust-color(colors.$orange, $lightness: -10%);
+    transform: translateY(0);
+    transition: {
+      property: box-shadow, transform;
+      duration: 100ms;
+    }
+
+    &:hover:not(:active),
+    &:focus:not(:active) {
+      box-shadow: 0 4px 0 adjust-color(colors.$orange, $lightness: -10%);
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .Cart {
+    width: 26em;
+    left: unset;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Cart {
+    right: 0;
   }
 }

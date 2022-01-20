@@ -4,6 +4,7 @@
 .Navigation {
   position: fixed;
   inset: 0;
+  z-index: 1;
 
   &::before {
     content: "";
@@ -30,6 +31,8 @@
       "nav nav nav" 1fr /
       1.5em 1fr 1.5em;
     animation: slide-in-from-left 200ms ease;
+    overflow-y: scroll;
+    scrollbar-width: none;
 
     &.close {
       animation: slide-out-to-left 200ms ease forwards;
@@ -62,13 +65,64 @@
         left: 0;
         width: 0;
         background-color: colors.$orange;
-        transition: width 100ms ease;
+        transition: 100ms ease;
       }
 
       &:hover,
       &:focus {
         &::before {
           width: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Navigation {
+    position: static;
+
+    &::before {
+      content: unset;
+    }
+
+    &__wrapper {
+      display: unset;
+      overflow: unset;
+    }
+
+    &__close-btn {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      margin-top: unset;
+      gap: 2em;
+
+      &-link {
+        padding: 2.6em 0;
+        font-weight: typography.$weight-reg;
+        font-size: 1rem;
+        color: colors.$dark-grayish-blue;
+
+        &::before {
+          inset-block: unset;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: unset;
+          height: 0;
+        }
+
+        &:hover,
+        &:focus {
+          color: colors.$very-dark-blue;
+
+          &::before {
+            height: 4px;
+            width: unset;
+          }
         }
       }
     }

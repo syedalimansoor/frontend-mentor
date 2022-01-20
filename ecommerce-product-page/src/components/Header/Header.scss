@@ -1,29 +1,45 @@
+@use "../../colors";
+@use "../../typography";
+
 .Header {
   display: flex;
   align-items: center;
   gap: 1.2em;
   padding: 1.2em 1.5em;
   position: relative;
-
-  button {
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-
-    :focus {
-      outline: 2px solid orange;
-      outline-offset: 2px;
-    }
-  }
+  max-width: 69em;
+  margin: 0 auto;
 
   &__cart-btn {
     margin-left: auto;
+    position: relative;
   }
 
   &__avatar {
-    height: 1.5em;
+    height: 1.7em;
+    border: 0.2em solid transparent;
+    border-radius: 99em;
+    cursor: pointer;
+    transition: border 100ms;
+
+    &:hover {
+      border-color: colors.$orange;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Header {
+    padding: 0;
+    gap: 3em;
+    border-bottom: 1px solid colors.$grayish-blue;
+
+    &__nav-btn {
+      display: none;
+    }
+
+    &__avatar {
+      height: 3.2em;
+    }
   }
 }

@@ -1,0 +1,16 @@
+@use "../../../colors";
+@use "../../../typography";
+
+.CartCounter {
+  display: block;
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  background-color: colors.$orange;
+  padding: 0.2em 0.6em;
+  border-radius: 99em;
+  color: colors.$white;
+  font-family: typography.$font;
+  font-weight: typography.$weight-bld;
+  font-size: 0.6rem;
+}
