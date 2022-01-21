@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/css/main.1b6e1ad6.css",
+    "main.js": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/js/main.3f96cd75.js",
+    "static/media/image-product-2.jpg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/image-product-2.c8bb0aaccecdebb16596.jpg",
+    "static/media/image-product-1.jpg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/image-product-1.520cc50bd13955f55cb2.jpg",
+    "static/media/image-product-3.jpg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/image-product-3.af5c71ba9ffcc0b8b54d.jpg",
+    "static/media/image-product-4.jpg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/image-product-4.9962862ef3eff6d65e5b.jpg",
+    "static/media/logo.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/logo.4fe9c1e86cf9bf600f0c239f6a6e5317.svg",
+    "index.html": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/index.html",
+    "static/media/icon-delete.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/icon-delete.1fd1f1f7d9f8ce5557b44ca3470a18b8.svg",
+    "static/media/icon-cart.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/icon-cart.539ec608f50e707c94d583ec11acf99d.svg",
+    "static/media/pattern-mobile.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/pattern-mobile.ea10ceb0e460fabdbac1.svg",
+    "static/media/pattern-desktop.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/pattern-desktop.81479920caa261fd841d.svg",
+    "static/media/icon-close.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
+    "static/media/icon-menu.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
+    "static/media/icon-previous.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/icon-previous.80616402c611cc0a6651d0b751da8a9b.svg",
+    "static/media/icon-next.svg": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/media/icon-next.9621183a551a9985b4bd7536c9a69c66.svg",
+    "main.1b6e1ad6.css.map": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/css/main.1b6e1ad6.css.map",
+    "main.3f96cd75.js.map": "/alimansoor-create.github.io/frontend-mentor/ecommerce-product-page/static/js/main.3f96cd75.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b6e1ad6.css",
+    "static/js/main.3f96cd75.js"
+  ]
+}
