@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Context from "./state/Context";
 import Header from "./components/Header/Header";
 
-import thumbnail1 from "./images/image-product-1-thumbnail.jpg";
-
 import "./App.scss";
 import "./keyframes.scss";
 import Page from "./components/Page/Page";

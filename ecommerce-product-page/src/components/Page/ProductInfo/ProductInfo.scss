@@ -1,0 +1,61 @@
+@use "../../../colors";
+@use "../../../typography";
+
+.ProductInfo {
+  padding: 1.5em;
+  padding-bottom: 6em;
+
+  &__overline {
+    font-size: 0.8rem;
+    font-weight: typography.$weight-bld;
+    color: colors.$orange;
+    letter-spacing: 0.1em;
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    font-size: 1.7rem;
+    color: colors.$very-dark-blue;
+    margin-bottom: 0.6em;
+  }
+
+  &__descr {
+    font-size: 0.95rem;
+    line-height: 1.6em;
+    color: colors.$dark-grayish-blue;
+    margin-bottom: 1.5em;
+  }
+
+  &__pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  &__new-price {
+    font-size: 1.8rem;
+    color: colors.$very-dark-blue;
+    position: relative;
+
+    &::after {
+      content: "50%";
+      font-size: 1rem;
+      color: colors.$orange;
+      background-color: colors.$pale-orange;
+      padding: 0.2em 0.6em;
+      border-radius: 0.2em;
+      position: absolute;
+      left: calc(100% + 15px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__original-price {
+    font-size: 1rem;
+    font-weight: typography.$weight-bld;
+    text-decoration: line-through;
+    color: colors.$grayish-blue;
+  }
+}

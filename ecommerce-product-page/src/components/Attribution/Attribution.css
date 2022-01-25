@@ -20,9 +20,9 @@
   width: max-content;
   text-decoration: none;
   color: inherit;
-  -webkit-text-fill-color: #c6ac9f;
+  /* -webkit-text-fill-color: #c6ac9f;
   -webkit-text-stroke: #c6ac9f;
-  -webkit-text-stroke-width: 0;
+  -webkit-text-stroke-width: 0; */
   font-size: 2em;
   line-height: 1.2em;
   margin-bottom: 0.4em;
@@ -30,8 +30,8 @@
   transition: 200ms ease;
 }
 .attr__link:hover {
-  -webkit-text-fill-color: #473129;
-  -webkit-text-stroke-width: 2px;
+  /* -webkit-text-fill-color: #473129;
+  -webkit-text-stroke-width: 2px; */
   text-decoration: underline;
   text-decoration-thickness: 3px;
 }

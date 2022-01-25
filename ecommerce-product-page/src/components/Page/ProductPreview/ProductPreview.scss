@@ -1,20 +1,5 @@
 .ProductPreview {
   position: relative;
-  perspective: 1000px;
-
-  &__img {
-    width: 100%;
-    aspect-ratio: 1.25;
-    object-fit: cover;
-    transform-origin: center center -50px;
-
-    &.flip-next {
-      animation: flip-3d 1s reverse ease-in-out;
-    }
-    &.flip-prev {
-      animation: flip-3d 1s ease-in-out;
-    }
-  }
 
   &__btn {
     display: flex;

@@ -1,0 +1,17 @@
+.Carousel {
+  display: grid;
+  grid-template: "image" 1fr / 1fr;
+
+  &__img {
+    grid-area: image;
+    width: 100%;
+    aspect-ratio: 1.25;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 500ms ease;
+
+    &[data-visible="true"] {
+      opacity: 1;
+    }
+  }
+}

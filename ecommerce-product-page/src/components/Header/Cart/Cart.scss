@@ -9,6 +9,7 @@
   top: calc(100% + 1em);
   inset-inline: 1.5em;
   animation: fade-in 200ms ease;
+  z-index: 1;
 
   &.close {
     animation: fade-out 200ms ease forwards;
