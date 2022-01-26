@@ -25,7 +25,7 @@ const Cart = forwardRef((props, ref) => {
           deleteItem={() => deleteItem(item)}
         />
       ))}
-      <button onClick={checkout} className="Cart__checkout-btn">
+      <button onClick={checkout} className="Cart__checkout-btn" autoFocus>
         Checkout
       </button>
     </>

@@ -53,7 +53,7 @@
     }
 
     &:hover:not(:active),
-    &:focus:not(:active) {
+    &:focus-visible:not(:active) {
       box-shadow: 0 4px 0 adjust-color(colors.$orange, $lightness: -10%);
       transform: translateY(-4px);
     }

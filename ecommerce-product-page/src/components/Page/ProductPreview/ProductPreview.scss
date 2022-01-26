@@ -43,3 +43,11 @@
     }
   }
 }
+
+@media (min-width: 900px) {
+  .ProductPreview {
+    &__btn {
+      display: none;
+    }
+  }
+}

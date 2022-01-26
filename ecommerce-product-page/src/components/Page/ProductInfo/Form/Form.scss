@@ -80,3 +80,18 @@
     }
   }
 }
+
+@media (min-width: 900px) {
+  .Form {
+    flex-direction: row;
+
+    > * {
+      width: 0;
+      flex: 1 1 auto;
+    }
+
+    &__qty-wrapper {
+      flex-shrink: 2;
+    }
+  }
+}

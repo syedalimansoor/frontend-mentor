@@ -6,6 +6,7 @@ import images from "../../../images/index";
 
 import "./ProductPreview.scss";
 import Carousel from "./Carousel/Carousel";
+import ThumbnailList from "./ThumbnailList/ThumbnailList";
 
 const ProductPreview = () => {
   const [currImg, setCurrImg] = useState(0);
@@ -16,6 +17,8 @@ const ProductPreview = () => {
   const prevImg = () => {
     setCurrImg((prev) => prev - 1);
   };
+
+  const desktopQuery = matchMedia("(min-width: 900px)");
 
   return (
     <div className="ProductPreview">
@@ -34,6 +37,13 @@ const ProductPreview = () => {
       >
         <img src={nextIcon} />
       </button>
+      {desktopQuery.matches && (
+        <ThumbnailList
+          images={images}
+          currImg={currImg}
+          setCurrImg={setCurrImg}
+        />
+      )}
     </div>
   );
 };

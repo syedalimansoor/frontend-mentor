@@ -59,3 +59,20 @@
     color: colors.$grayish-blue;
   }
 }
+
+@media (min-width: 900px) {
+  .ProductInfo {
+    padding: 0;
+    flex-shrink: 0;
+
+    &__title {
+      font-size: 2.8rem;
+    }
+
+    &__pricing {
+      flex-direction: column;
+      align-items: start;
+      gap: 1em;
+    }
+  }
+}

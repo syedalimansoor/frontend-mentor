@@ -7,7 +7,6 @@ const Carousel = ({ images, currImg }) => {
         <img
           src={src}
           className="Carousel__img"
-          data-id={idx}
           data-visible={currImg === idx}
           key={idx}
         />
