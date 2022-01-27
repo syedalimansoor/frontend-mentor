@@ -1,0 +1,33 @@
+.Lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+
+  &::before {
+    content: "";
+    background-color: rgb(0 0 0 / 0.75);
+    position: absolute;
+    inset: 0;
+    animation: fade-in 400ms ease;
+  }
+
+  &__wrapper {
+    width: 550px;
+    z-index: 1;
+    animation: grow-in 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  &__close-btn {
+    align-self: flex-end;
+    cursor: pointer;
+    img {
+      width: 20px;
+      filter: brightness(300%);
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import "./Carousel.scss";
 
-const Carousel = ({ images, currImg }) => {
+const Carousel = ({ images, currImg, setLightbox }) => {
   return (
-    <div className="Carousel">
+    <button className="Carousel" onClick={() => setLightbox(true)}>
       {images.map((src, idx) => (
         <img
           src={src}
@@ -11,7 +11,7 @@ const Carousel = ({ images, currImg }) => {
           key={idx}
         />
       ))}
-    </div>
+    </button>
   );
 };
 

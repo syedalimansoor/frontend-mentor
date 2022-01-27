@@ -1,0 +1,52 @@
+.Display {
+  display: grid;
+  grid-template: "img" 1fr / 1fr;
+  position: relative;
+
+  &__img {
+    width: 100%;
+    border-radius: 1em;
+    grid-area: img;
+    opacity: 0;
+    transition: opacity 500ms ease;
+
+    &[data-current="true"] {
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    background: white;
+    justify-content: center;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    z-index: 1;
+
+    &-prev {
+      left: 0;
+      transform: translate(-50%, -50%);
+      img {
+        transform: translateX(-10%);
+      }
+    }
+
+    &-next {
+      right: 0;
+      transform: translate(50%, -50%);
+      img {
+        transform: translateX(10%);
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      img {
+        filter: contrast(0);
+      }
+    }
+  }
+}

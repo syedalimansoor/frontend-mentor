@@ -1,0 +1,31 @@
+@use "../../../../colors";
+
+.Thumbnails {
+  width: 80%;
+  align-self: center;
+  display: flex;
+  gap: 1.8em;
+
+  &__btn-img {
+    border-radius: 0.5em;
+    img {
+      width: 100%;
+      transition: filter 200ms ease;
+      border-radius: 0.5em;
+    }
+
+    &[data-current="true"] {
+      outline: 2px solid colors.$orange;
+      img {
+        filter: contrast(60%) brightness(130%);
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      img {
+        filter: contrast(60%) brightness(130%);
+      }
+    }
+  }
+}

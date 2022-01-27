@@ -31,3 +31,12 @@
     transform: translateX(-100%);
   }
 }
+
+@keyframes grow-in {
+  from {
+    transform: scale(0%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
