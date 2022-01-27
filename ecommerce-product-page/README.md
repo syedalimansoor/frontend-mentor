@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Frontend Mentor - E-commerce product page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome! 👋
 
-## Available Scripts
+This is an e-commerce website built with React and Sass for a coding challenge on [Frontend Mentor](https://www.frontendmentor.io). It was my second project with React and I gotta say, I'm _hook_-ed! 😆
 
-In the project directory, you can run:
+You could say I have fallen in love with the React mindset—think of every problem as a collection of smaller problems and crack each one of them individually. When all the individual pieces of your app come together and coalesce into what you were trying to accomplish, a heavy sigh of relief escapes the mouth and a major part of the next few hours is spent just clicking buttons, tabbing through the experience, and getting delighted at every micro-interaction, even though you have seen it an umpteen times before.
 
-### `npm start`
+Yet, there is always more to explore and I look forward to tinkering with all the possibilities that have opened up to me as a React developer now.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My first step will probably be to dive into CSS-in-JS, or [styled-components](https://styled-components.com/) and [Emotion](https://emotion.sh), to be more exact.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+After that, I will hopefully explore the mysterious world that is the server side. I know that there is [Next.js](https://nextjs.org/) and [Gatsby](https://www.gatsbyjs.com/) for doing all that stuff but I am still kinda unaware of how everything works. Welp, that's what I plan to learn!
 
-### `npm test`
+I also have eyes on the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) and [GSAP](https://greensock.com/gsap/) for animations and scroll effects.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once I master the art of animation (or atleast become somewhat proficient at it), I will enter the 3-dimensional realm and make some cool stuff with [ThreeJS](https://threejs.org/).
 
-### `npm run build`
+Do you think there is anything else I could learn? Do let me know! And of course, feedback on the solution will be highly appreciated!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Desktop screenshot](./screenshots/desktop.png)
+![Desktop lightbox screenshot](./screenshots/lightbox.png)
+![Mobile screenshot](./screenshots/mobile.png)
