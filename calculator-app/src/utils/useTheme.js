@@ -19,20 +19,20 @@ const useTheme = () => {
     return "dark";
   };
 
+  // useEffect(() => {
+  //   const prefersDark =
+  //     matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+  //   const prefersLight =
+  //     matchMedia && matchMedia("(prefers-color-scheme: light)").matches;
+
+  //   if (prefersDark) setThemeName("dark");
+  //   if (prefersLight) setThemeName("light");
+  // }, []);
+
   // Gets the current theme from local storage and sets its values
   useEffect(() => {
     const currThemeName = getThemeName();
     setTheme(allThemes[currThemeName]);
-  }, []);
-
-  useEffect(() => {
-    const prefersDark =
-      matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
-    const prefersLight =
-      matchMedia && matchMedia("(prefers-color-scheme: light)").matches;
-
-    if (prefersDark) setThemeName("dark");
-    if (prefersLight) setThemeName("light");
   }, []);
 
   return { theme, setThemeName, getThemeName };
