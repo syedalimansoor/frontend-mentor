@@ -18,7 +18,6 @@ const Keypad = () => {
     setOverwrite,
     decimal,
     setDecimal,
-    decimalDigits,
     setDecimalDigits,
   } = useContext(CalculatorContext);
 

@@ -30,6 +30,7 @@ const useTheme = () => {
   // }, []);
 
   // Gets the current theme from local storage and sets its values
+
   useEffect(() => {
     const currThemeName = getThemeName();
     setTheme(allThemes[currThemeName]);
