@@ -137,7 +137,6 @@ const Keypad = () => {
       evt.preventDefault();
       let { key: char } = evt;
 
-      console.log(evt);
       if (char === "Enter") {
         evaluate();
         return;
@@ -150,8 +149,13 @@ const Keypad = () => {
         reset();
         return;
       }
-
-      appendChar(char, true);
+      if (
+        Array.from(Array(10).keys())
+          .map((e) => String(e))
+          .concat(["+", "-", "*", "/", "."])
+          .includes(char)
+      )
+        appendChar(char, true);
     });
   }, []);
 
