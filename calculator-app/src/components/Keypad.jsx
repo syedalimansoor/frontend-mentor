@@ -2,19 +2,103 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 
-import ScreenContext from "../context/ScreenContext";
+import CalculatorContext from "../context/CalculatorContext";
 
 const Keypad = () => {
-  const {} = useContext(ScreenContext);
+  const {
+    screenValue,
+    setScreenValue,
+    appendDigit,
+    reset,
+    deleteDigit,
+    memory,
+    setMemory,
+    operation,
+    setOperation,
+    setOverwrite,
+  } = useContext(CalculatorContext);
+
+  const handleNumberClick = (evt) => {
+    appendDigit(Number(evt.target.name));
+  };
+
+  const handleResetClick = () => {
+    reset();
+    setMemory(0);
+    setOperation("");
+    setOverwrite(false);
+  };
+
+  const handleDelClick = () => {
+    deleteDigit();
+  };
+
+  const calculate = (operation) => {
+    let result;
+    switch (operation) {
+      case "plus":
+        result = memory + screenValue;
+        break;
+      case "minus":
+        result = memory - screenValue;
+        break;
+      case "times":
+        result = memory * screenValue;
+        break;
+      case "slash":
+        result = memory / screenValue;
+        break;
+      default:
+        break;
+    }
+    setMemory(result);
+    return result;
+  };
+
+  const handleOperationClick = (evt) => {
+    if (memory === 0) {
+      setMemory(screenValue);
+      reset();
+    } else {
+      const result = calculate(operation);
+      setScreenValue(result);
+      setOverwrite(true);
+    }
+    setOperation(evt.target.value);
+  };
+
+  const handleEqualsClick = () => {
+    let result = calculate(operation);
+    setScreenValue(result);
+    setOverwrite(true);
+    setMemory(0);
+  };
+
+  const numberKeys = Array.from({ length: 10 }).map((_, idx) => (
+    <NumberKey key={uuid()} num={idx} name={idx} onClick={handleNumberClick}>
+      {idx}
+    </NumberKey>
+  ));
+
+  const operationKeys = Object.keys(OPERATIONS).map((operation) => (
+    <OperationKey
+      key={uuid()}
+      operation={operation}
+      value={operation}
+      onClick={handleOperationClick}
+    >
+      {OPERATIONS[operation]}
+    </OperationKey>
+  ));
 
   return (
     <StyledKeypad>
       {numberKeys}
       {operationKeys}
       <DecimalKey>.</DecimalKey>
-      <DelKey>DEL</DelKey>
-      <ResetKey>RESET</ResetKey>
-      <EqualsKey>=</EqualsKey>
+      <DelKey onClick={handleDelClick}>DEL</DelKey>
+      <ResetKey onClick={handleResetClick}>RESET</ResetKey>
+      <EqualsKey onClick={handleEqualsClick}>=</EqualsKey>
     </StyledKeypad>
   );
 };
@@ -50,7 +134,6 @@ const Key = styled.button`
 
   appearance: none;
   border: none;
-  /* line-height: 1em; */
   border-radius: 0.2rem;
   padding: 0.3rem;
   cursor: pointer;
@@ -75,7 +158,7 @@ const DelKey = styled(Key)`
   --color: ${({ theme }) => theme.text.del};
   --bg-color: ${({ theme }) => theme.keys.del.background};
   --shadow-color: ${({ theme }) => theme.keys.del.shadow};
-  font-size: 0.6rem;
+  font-size: 0.5rem;
 `;
 const OperationKey = styled(Key)`
   grid-area: ${({ operation }) => operation};
@@ -92,17 +175,5 @@ const EqualsKey = styled(DelKey)`
   --bg-color: ${({ theme }) => theme.keys.equals.background};
   --shadow-color: ${({ theme }) => theme.keys.equals.shadow};
 `;
-
-const numberKeys = Array.from({ length: 10 }).map((_, idx) => (
-  <NumberKey key={uuid()} num={idx}>
-    {idx}
-  </NumberKey>
-));
-
-const operationKeys = Object.keys(OPERATIONS).map((operation) => (
-  <OperationKey key={uuid()} operation={operation}>
-    {OPERATIONS[operation]}
-  </OperationKey>
-));
 
 export default Keypad;

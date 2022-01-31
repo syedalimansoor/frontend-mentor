@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import styled from "styled-components";
 
-import ScreenContext from "../context/ScreenContext";
+import CalculatorContext from "../context/CalculatorContext";
 
 const Screen = () => {
-  const { screenValue } = useContext(ScreenContext);
+  const { screenValue } = useContext(CalculatorContext);
 
   return <StyledScreen>{screenValue}</StyledScreen>;
 };

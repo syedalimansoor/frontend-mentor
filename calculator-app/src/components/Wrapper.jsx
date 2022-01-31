@@ -17,6 +17,9 @@ const StyledWrapper = styled.main`
   place-items: center;
   padding: 0.8em;
   transition: background-color 100ms ease;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
 `;
 
 export default Wrapper;
