@@ -47,6 +47,7 @@ const Keypad = () => {
         break;
       case "slash":
         result = memory / screenValue;
+        if (!isFinite(result)) result = 0;
         break;
       default:
         break;
