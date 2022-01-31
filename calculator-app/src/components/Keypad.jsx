@@ -1,0 +1,108 @@
+import { useContext } from "react";
+import styled from "styled-components";
+import { v4 as uuid } from "uuid";
+
+import ScreenContext from "../context/ScreenContext";
+
+const Keypad = () => {
+  const {} = useContext(ScreenContext);
+
+  return (
+    <StyledKeypad>
+      {numberKeys}
+      {operationKeys}
+      <DecimalKey>.</DecimalKey>
+      <DelKey>DEL</DelKey>
+      <ResetKey>RESET</ResetKey>
+      <EqualsKey>=</EqualsKey>
+    </StyledKeypad>
+  );
+};
+
+const OPERATIONS = {
+  plus: "+",
+  minus: "-",
+  times: "x",
+  slash: "/",
+};
+
+const StyledKeypad = styled.menu`
+  width: 100%;
+  background-color: ${({ theme }) => theme.backgrounds.keypad};
+  border-radius: 0.3em;
+  padding: 0.7em;
+  transition: background-color 100ms ease;
+
+  display: grid;
+  grid-template:
+    "num7 num8 num9 del" 1fr
+    "num4 num5 num6 plus" 1fr
+    "num1 num2 num3 minus" 1fr
+    "dec num0 slash times" 1fr
+    "reset reset equals equals" 1fr / 1fr 1fr 1fr 1fr;
+  column-gap: 0.4em;
+  row-gap: 0.55em;
+`;
+const Key = styled.button`
+  --color: ${({ theme }) => theme.text.numbers};
+  --bg-color: ${({ theme }) => theme.keys.default.background};
+  --shadow-color: ${({ theme }) => theme.keys.default.shadow};
+
+  appearance: none;
+  border: none;
+  /* line-height: 1em; */
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  transition-property: color, background-color, box-shadow, transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+
+  color: var(--color);
+  background-color: var(--bg-color);
+  box-shadow: 0 0.15rem 0 var(--shadow-color);
+
+  &:active {
+    transform: translateY(0.15rem);
+    box-shadow: 0 0 0 var(--shadow-color);
+  }
+`;
+const NumberKey = styled(Key)`
+  grid-area: ${({ num }) => `num${num}`};
+`;
+const DelKey = styled(Key)`
+  grid-area: del;
+  --color: ${({ theme }) => theme.text.del};
+  --bg-color: ${({ theme }) => theme.keys.del.background};
+  --shadow-color: ${({ theme }) => theme.keys.del.shadow};
+  font-size: 0.6rem;
+`;
+const OperationKey = styled(Key)`
+  grid-area: ${({ operation }) => operation};
+`;
+const DecimalKey = styled(Key)`
+  grid-area: dec;
+`;
+const ResetKey = styled(DelKey)`
+  grid-area: reset;
+`;
+const EqualsKey = styled(DelKey)`
+  grid-area: equals;
+  --color: ${({ theme }) => theme.text.equals};
+  --bg-color: ${({ theme }) => theme.keys.equals.background};
+  --shadow-color: ${({ theme }) => theme.keys.equals.shadow};
+`;
+
+const numberKeys = Array.from({ length: 10 }).map((_, idx) => (
+  <NumberKey key={uuid()} num={idx}>
+    {idx}
+  </NumberKey>
+));
+
+const operationKeys = Object.keys(OPERATIONS).map((operation) => (
+  <OperationKey key={uuid()} operation={operation}>
+    {OPERATIONS[operation]}
+  </OperationKey>
+));
+
+export default Keypad;
