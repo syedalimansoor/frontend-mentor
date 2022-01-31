@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { v4 as uuid } from "uuid";
 
 import CalculatorContext from "../context/CalculatorContext";
 
@@ -101,14 +100,14 @@ const Keypad = () => {
   };
 
   const numberKeys = Array.from({ length: 10 }).map((_, idx) => (
-    <NumberKey key={uuid()} num={idx} name={idx} onClick={handleNumberClick}>
+    <NumberKey key={idx} num={idx} name={idx} onClick={handleNumberClick}>
       {idx}
     </NumberKey>
   ));
 
   const operationKeys = Object.keys(OPERATIONS).map((operation) => (
     <OperationKey
-      key={uuid()}
+      key={operation}
       operation={operation}
       value={operation}
       onClick={handleOperationClick}
@@ -178,7 +177,8 @@ const Key = styled.button`
   background-color: var(--bg-color);
   box-shadow: 0 0.15rem 0 var(--shadow-color);
 
-  &:active {
+  &:active,
+  &.pressed {
     transform: translateY(0.15rem);
     box-shadow: 0 0 0 var(--shadow-color);
   }

@@ -12,7 +12,6 @@
     "react-helmet-async": "^1.2.2",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
-    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
