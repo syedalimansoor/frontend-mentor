@@ -19,6 +19,8 @@ const Keypad = () => {
     decimal,
     setDecimal,
     setDecimalDigits,
+    maxDecimalDigits,
+    setMaxDecimalDigits,
   } = useContext(CalculatorContext);
 
   const resetDecimal = () => {
@@ -36,6 +38,7 @@ const Keypad = () => {
     setOperation("");
     setOverwrite(false);
     resetDecimal();
+    setMaxDecimalDigits(0);
   };
 
   const handleDelClick = () => {
@@ -81,7 +84,9 @@ const Keypad = () => {
 
   const handleEqualsClick = () => {
     let result = calculate(operation);
-    setScreenValue(result);
+    setScreenValue(
+      Number.isInteger(result) ? result : result.toFixed(maxDecimalDigits)
+    );
     setOverwrite(true);
     setMemory(0);
   };

@@ -13,6 +13,7 @@ const Calculator = () => {
   const [overwrite, setOverwrite] = useState(false);
   const [decimal, setDecimal] = useState(false);
   const [decimalDigits, setDecimalDigits] = useState(0);
+  const [maxDecimalDigits, setMaxDecimalDigits] = useState(0);
 
   const appendDigit = (value) => {
     if (overwrite) reset();
@@ -24,6 +25,8 @@ const Calculator = () => {
           (prev + value / 10 ** (decimalDigits + 1)).toFixed(decimalDigits + 1)
         )
       );
+      decimalDigits + 1 > maxDecimalDigits &&
+        setMaxDecimalDigits(decimalDigits + 1);
       setDecimalDigits((prev) => prev + 1);
     }
     if (overwrite) setOverwrite(false);
@@ -49,12 +52,14 @@ const Calculator = () => {
     overwrite,
     decimal,
     decimalDigits,
+    maxDecimalDigits,
     setScreenValue,
     setMemory,
     setOperation,
     setOverwrite,
     setDecimal,
     setDecimalDigits,
+    setMaxDecimalDigits,
     appendDigit,
     deleteDigit,
     reset,
