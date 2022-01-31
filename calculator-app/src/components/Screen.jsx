@@ -4,9 +4,9 @@ import styled from "styled-components";
 import CalculatorContext from "../context/CalculatorContext";
 
 const Screen = () => {
-  const { screenValue } = useContext(CalculatorContext);
+  const { screenText } = useContext(CalculatorContext);
 
-  return <StyledScreen>{screenValue}</StyledScreen>;
+  return <StyledScreen>{screenText}</StyledScreen>;
 };
 
 const StyledScreen = styled.output`
@@ -21,6 +21,12 @@ const StyledScreen = styled.output`
   transition-duration: 100ms;
   transition-timing-function: ease;
   margin-bottom: 1em;
+
+  &:empty::before {
+    content: "Enter expression...";
+    font-size: 0.6em;
+    opacity: 0.3;
+  }
 
   @media (min-width: 800px) {
     font-size: 1.5rem;

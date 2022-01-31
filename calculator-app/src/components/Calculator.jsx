@@ -7,62 +7,17 @@ import CalculatorContext from "../context/CalculatorContext";
 import Keypad from "./Keypad";
 
 const Calculator = () => {
-  const [screenValue, setScreenValue] = useState(0);
-  const [memory, setMemory] = useState(0);
-  const [operation, setOperation] = useState("");
+  const [screenText, setScreenText] = useState("");
+  const [evalText, setEvalText] = useState("");
   const [overwrite, setOverwrite] = useState(false);
-  const [decimal, setDecimal] = useState(false);
-  const [decimalDigits, setDecimalDigits] = useState(0);
-  const [maxDecimalDigits, setMaxDecimalDigits] = useState(0);
-
-  const appendDigit = (value) => {
-    if (overwrite) reset();
-    if (!decimal) {
-      setScreenValue((prev) => prev * 10 + value);
-    } else {
-      setScreenValue((prev) =>
-        Number(
-          (prev + value / 10 ** (decimalDigits + 1)).toFixed(decimalDigits + 1)
-        )
-      );
-      decimalDigits + 1 > maxDecimalDigits &&
-        setMaxDecimalDigits(decimalDigits + 1);
-      setDecimalDigits((prev) => prev + 1);
-    }
-    if (overwrite) setOverwrite(false);
-  };
-  const deleteDigit = () => {
-    if (!decimal) {
-      setScreenValue((prev) => Math.floor(prev / 10));
-    } else {
-      const newDecimalDigits = decimalDigits - 1;
-      setScreenValue((prev) => Number(prev.toFixed(newDecimalDigits)));
-      setDecimalDigits(newDecimalDigits);
-      newDecimalDigits === 0 && setDecimal(false);
-    }
-  };
-  const reset = () => {
-    setScreenValue(0);
-  };
 
   const contextValue = {
-    screenValue,
-    memory,
-    operation,
+    screenText,
+    setScreenText,
+    evalText,
+    setEvalText,
     overwrite,
-    decimal,
-    decimalDigits,
-    maxDecimalDigits,
-    setScreenValue,
-    setMemory,
-    setOperation,
     setOverwrite,
-    setDecimal,
-    setDecimalDigits,
-    setMaxDecimalDigits,
-    appendDigit,
-    deleteDigit,
-    reset,
   };
 
   return (

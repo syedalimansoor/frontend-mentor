@@ -1,106 +1,162 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import CalculatorContext from "../context/CalculatorContext";
 
 const Keypad = () => {
   const {
-    screenValue,
-    setScreenValue,
-    appendDigit,
-    reset,
-    deleteDigit,
-    memory,
-    setMemory,
-    operation,
-    setOperation,
-    setOverwrite,
-    decimal,
-    setDecimal,
-    setDecimalDigits,
-    maxDecimalDigits,
-    setMaxDecimalDigits,
+    setScreenText: _setScreenText,
+    setEvalText: _setEvalText,
+    evalText,
+    screenText,
+    overwrite,
+    setOverwrite: _setOverwrite,
   } = useContext(CalculatorContext);
 
-  const resetDecimal = () => {
-    setDecimal(false);
-    setDecimalDigits(0);
-  };
-
-  const handleNumberClick = (evt) => {
-    appendDigit(Number(evt.target.name));
-  };
-
-  const handleResetClick = () => {
-    reset();
-    setMemory(0);
-    setOperation("");
-    setOverwrite(false);
-    resetDecimal();
-    setMaxDecimalDigits(0);
-  };
-
-  const handleDelClick = () => {
-    deleteDigit();
-  };
-
-  const calculate = (operation) => {
-    let result;
-    switch (operation) {
-      case "plus":
-        result = memory + screenValue;
-        break;
-      case "minus":
-        result = memory - screenValue;
-        break;
-      case "times":
-        result = memory * screenValue;
-        break;
-      case "slash":
-        result = memory / screenValue;
-        if (!isFinite(result)) result = 0;
-        break;
-      default:
-        result = memory;
-        break;
-    }
-    setMemory(result);
-    return result;
-  };
-
-  const handleOperationClick = (evt) => {
-    if (memory === 0) {
-      setMemory(screenValue);
-      reset();
+  const screenTextRef = useRef(screenText);
+  const setScreenText = (data) => {
+    if (typeof data === "function") {
+      screenTextRef.current = data(screenTextRef.current);
     } else {
-      const result = calculate(operation);
-      setScreenValue(result);
-      setOverwrite(true);
+      screenTextRef.current = data;
     }
-    setOperation(evt.target.value);
-    resetDecimal();
+    _setScreenText(data);
   };
 
-  const handleEqualsClick = () => {
-    let result = calculate(operation);
-    setScreenValue(
-      Number.isInteger(result)
-        ? result
-        : maxDecimalDigits
-        ? Number(result.toFixed(maxDecimalDigits))
-        : result
-    );
+  const evalTextRef = useRef(evalText);
+  const setEvalText = (data) => {
+    if (typeof data === "function") {
+      evalTextRef.current = data(evalTextRef.current);
+    } else {
+      evalTextRef.current = data;
+    }
+    _setEvalText(data);
+  };
+
+  const overwriteRef = useRef(overwrite);
+  const setOverwrite = (data) => {
+    if (typeof data === "function") {
+      overwriteRef.current = data(overwriteRef.current);
+    } else {
+      overwriteRef.current = data;
+    }
+    _setOverwrite(data);
+  };
+
+  // Appends the key pressed to both the screen and eval string
+  const appendChar = (char, keyboard = false) => {
+    let operators = ["+", "-", "×", "÷"];
+    if (keyboard) {
+      operators = ["+", "-", "*", "/"];
+    }
+    let isOperator = false;
+
+    if (operators.includes(char)) {
+      isOperator = true;
+    }
+
+    if (isOperator) {
+      if (screenTextRef.current.slice(-1) === " ") {
+        setScreenText((prev) => prev.slice(0, -3) + ` ${char} `);
+        setEvalText((prev) => {
+          switch (char) {
+            case "×":
+              return prev.slice(0, -1) + "*";
+            case "÷":
+              return prev.slice(0, -1) + "/";
+            default:
+              return prev.slice(0, -1) + char;
+          }
+        });
+        return;
+      }
+      if (!screenTextRef.current) {
+        return;
+      }
+    } else {
+      if (overwriteRef.current) {
+        setScreenText(char);
+        setEvalText(char);
+        setOverwrite(false);
+        return;
+      }
+    }
+
+    setScreenText((prev) => {
+      if (isOperator) {
+        return prev + ` ${char} `;
+      }
+      return prev + char;
+    });
+    setEvalText((prev) => {
+      if (isOperator) {
+        switch (char) {
+          case "×":
+            return prev + "*";
+          case "÷":
+            return prev + "/";
+          default:
+            break;
+        }
+      }
+      return prev + char;
+    });
+    setOverwrite(false);
+  };
+
+  const delChar = () => {
+    setEvalText((prev) => prev.slice(0, -1));
+    setScreenText((prev) => {
+      if (prev.slice(-1) === " ") {
+        return prev.slice(0, -3);
+      }
+      return prev.slice(0, -1);
+    });
+  };
+
+  const reset = () => {
+    setScreenText("");
+    setEvalText("");
+  };
+
+  const evaluate = () => {
+    let result = String(Number(eval(evalTextRef.current).toFixed(8)));
+    if (result === "Infinity") result = "";
+    setScreenText(result);
+    setEvalText(result);
     setOverwrite(true);
-    setMemory(0);
   };
 
-  const handleDecimalClick = () => {
-    if (!decimal) setDecimalDigits(0);
-    setDecimal(true);
+  const handleKeyPress = (evt) => {
+    appendChar(String(evt.target.value));
   };
+
+  useEffect(() => {
+    window.addEventListener("keydown", (evt) => {
+      evt.stopImmediatePropagation();
+      evt.preventDefault();
+      let { key: char } = evt;
+
+      console.log(evt);
+      if (char === "Enter") {
+        evaluate();
+        return;
+      }
+      if (char === "Backspace") {
+        delChar();
+        return;
+      }
+      if (char === "Escape") {
+        reset();
+        return;
+      }
+
+      appendChar(char, true);
+    });
+  }, []);
 
   const numberKeys = Array.from({ length: 10 }).map((_, idx) => (
-    <NumberKey key={idx} num={idx} name={idx} onClick={handleNumberClick}>
+    <NumberKey key={idx} num={idx} value={idx} onClick={handleKeyPress}>
       {idx}
     </NumberKey>
   ));
@@ -109,8 +165,8 @@ const Keypad = () => {
     <OperationKey
       key={operation}
       operation={operation}
-      value={operation}
-      onClick={handleOperationClick}
+      value={OPERATIONS[operation]}
+      onClick={handleKeyPress}
     >
       {OPERATIONS[operation]}
     </OperationKey>
@@ -120,10 +176,12 @@ const Keypad = () => {
     <StyledKeypad>
       {numberKeys}
       {operationKeys}
-      <DecimalKey onClick={handleDecimalClick}>.</DecimalKey>
-      <DelKey onClick={handleDelClick}>DEL</DelKey>
-      <ResetKey onClick={handleResetClick}>RESET</ResetKey>
-      <EqualsKey onClick={handleEqualsClick}>=</EqualsKey>
+      <DecimalKey value={"."} onClick={handleKeyPress}>
+        .
+      </DecimalKey>
+      <DelKey onClick={delChar}>DEL</DelKey>
+      <ResetKey onClick={reset}>RESET</ResetKey>
+      <EqualsKey onClick={evaluate}>=</EqualsKey>
     </StyledKeypad>
   );
 };
@@ -131,8 +189,8 @@ const Keypad = () => {
 const OPERATIONS = {
   plus: "+",
   minus: "-",
-  times: "x",
-  slash: "/",
+  times: "×",
+  slash: "÷",
 };
 
 const StyledKeypad = styled.menu`
