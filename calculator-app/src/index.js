@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <HelmetProvider>
       <App />
-      <Attribution />
+      {/* <Attribution /> */}
     </HelmetProvider>
   );
 };

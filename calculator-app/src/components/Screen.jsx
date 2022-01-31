@@ -21,6 +21,10 @@ const StyledScreen = styled.output`
   transition-duration: 100ms;
   transition-timing-function: ease;
   margin-bottom: 1em;
+
+  @media (min-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default Screen;

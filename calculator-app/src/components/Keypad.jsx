@@ -16,7 +16,16 @@ const Keypad = () => {
     operation,
     setOperation,
     setOverwrite,
+    decimal,
+    setDecimal,
+    decimalDigits,
+    setDecimalDigits,
   } = useContext(CalculatorContext);
+
+  const resetDecimal = () => {
+    setDecimal(false);
+    setDecimalDigits(0);
+  };
 
   const handleNumberClick = (evt) => {
     appendDigit(Number(evt.target.name));
@@ -27,6 +36,7 @@ const Keypad = () => {
     setMemory(0);
     setOperation("");
     setOverwrite(false);
+    resetDecimal();
   };
 
   const handleDelClick = () => {
@@ -50,6 +60,7 @@ const Keypad = () => {
         if (!isFinite(result)) result = 0;
         break;
       default:
+        result = memory;
         break;
     }
     setMemory(result);
@@ -66,6 +77,7 @@ const Keypad = () => {
       setOverwrite(true);
     }
     setOperation(evt.target.value);
+    resetDecimal();
   };
 
   const handleEqualsClick = () => {
@@ -73,6 +85,11 @@ const Keypad = () => {
     setScreenValue(result);
     setOverwrite(true);
     setMemory(0);
+  };
+
+  const handleDecimalClick = () => {
+    if (!decimal) setDecimalDigits(0);
+    setDecimal(true);
   };
 
   const numberKeys = Array.from({ length: 10 }).map((_, idx) => (
@@ -96,7 +113,7 @@ const Keypad = () => {
     <StyledKeypad>
       {numberKeys}
       {operationKeys}
-      <DecimalKey>.</DecimalKey>
+      <DecimalKey onClick={handleDecimalClick}>.</DecimalKey>
       <DelKey onClick={handleDelClick}>DEL</DelKey>
       <ResetKey onClick={handleResetClick}>RESET</ResetKey>
       <EqualsKey onClick={handleEqualsClick}>=</EqualsKey>
@@ -127,6 +144,12 @@ const StyledKeypad = styled.menu`
     "reset reset equals equals" 1fr / 1fr 1fr 1fr 1fr;
   column-gap: 0.4em;
   row-gap: 0.55em;
+
+  @media (min-width: 800px) {
+    padding: 1em;
+    column-gap: 0.8em;
+    row-gap: 0.95em;
+  }
 `;
 const Key = styled.button`
   --color: ${({ theme }) => theme.text.numbers};
@@ -138,6 +161,7 @@ const Key = styled.button`
   border-radius: 0.2rem;
   padding: 0.3rem;
   cursor: pointer;
+  user-select: none;
   transition-property: color, background-color, box-shadow, transform;
   transition-duration: 100ms;
   transition-timing-function: ease;

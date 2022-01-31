@@ -11,29 +11,35 @@ const Calculator = () => {
   const [memory, setMemory] = useState(0);
   const [operation, setOperation] = useState("");
   const [overwrite, setOverwrite] = useState(false);
+  const [decimal, setDecimal] = useState(false);
+  const [decimalDigits, setDecimalDigits] = useState(0);
 
   const appendDigit = (value) => {
     if (overwrite) reset();
-    setScreenValue((prev) => prev * 10 + value);
+    if (!decimal) {
+      setScreenValue((prev) => prev * 10 + value);
+    } else {
+      setScreenValue((prev) =>
+        Number(
+          (prev + value / 10 ** (decimalDigits + 1)).toFixed(decimalDigits + 1)
+        )
+      );
+      setDecimalDigits((prev) => prev + 1);
+    }
     if (overwrite) setOverwrite(false);
   };
   const deleteDigit = () => {
-    setScreenValue((prev) => Math.floor(prev / 10));
+    if (!decimal) {
+      setScreenValue((prev) => Math.floor(prev / 10));
+    } else {
+      const newDecimalDigits = decimalDigits - 1;
+      setScreenValue((prev) => Number(prev.toFixed(newDecimalDigits)));
+      setDecimalDigits(newDecimalDigits);
+      newDecimalDigits === 0 && setDecimal(false);
+    }
   };
   const reset = () => {
     setScreenValue(0);
-  };
-  const add = (value) => {
-    setScreenValue((prev) => prev + value);
-  };
-  const subtract = (value) => {
-    setScreenValue((prev) => prev - value);
-  };
-  const multiply = (value) => {
-    setScreenValue((prev) => prev * value);
-  };
-  const divide = (value) => {
-    setScreenValue((prev) => prev + value);
   };
 
   const contextValue = {
@@ -41,17 +47,17 @@ const Calculator = () => {
     memory,
     operation,
     overwrite,
+    decimal,
+    decimalDigits,
     setScreenValue,
     setMemory,
     setOperation,
     setOverwrite,
+    setDecimal,
+    setDecimalDigits,
     appendDigit,
     deleteDigit,
     reset,
-    add,
-    subtract,
-    multiply,
-    divide,
   };
 
   return (
@@ -66,7 +72,7 @@ const Calculator = () => {
 };
 
 const StyledCalculator = styled.section`
-  width: min(100%, 30em);
+  width: min(100%, 17em);
 `;
 
 export default Calculator;
