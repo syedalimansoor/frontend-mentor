@@ -85,7 +85,11 @@ const Keypad = () => {
   const handleEqualsClick = () => {
     let result = calculate(operation);
     setScreenValue(
-      Number.isInteger(result) ? result : result.toFixed(maxDecimalDigits)
+      Number.isInteger(result)
+        ? result
+        : maxDecimalDigits
+        ? Number(result.toFixed(maxDecimalDigits))
+        : result
     );
     setOverwrite(true);
     setMemory(0);
