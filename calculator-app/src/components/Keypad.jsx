@@ -6,8 +6,6 @@ import CalculatorContext from "../context/CalculatorContext";
 const Keypad = () => {
   const {
     setScreenText: _setScreenText,
-    setEvalText: _setEvalText,
-    evalText,
     screenText,
     overwrite,
     setOverwrite: _setOverwrite,
@@ -23,16 +21,6 @@ const Keypad = () => {
     _setScreenText(data);
   };
 
-  const evalTextRef = useRef(evalText);
-  const setEvalText = (data) => {
-    if (typeof data === "function") {
-      evalTextRef.current = data(evalTextRef.current);
-    } else {
-      evalTextRef.current = data;
-    }
-    _setEvalText(data);
-  };
-
   const overwriteRef = useRef(overwrite);
   const setOverwrite = (data) => {
     if (typeof data === "function") {
@@ -43,7 +31,24 @@ const Keypad = () => {
     _setOverwrite(data);
   };
 
-  // Appends the key pressed to both the screen and eval string
+  const cleanup = (prev) => {
+    let arr = prev.split(" ");
+
+    let lastDigit = arr[arr.length - 1];
+    if (lastDigit.split(".").length > 2)
+      arr[arr.length - 1] = lastDigit.slice(0, -1);
+    if (lastDigit.includes(".")) return arr.join(" ");
+
+    return arr
+      .map((e) => {
+        let num = Number(e);
+        if (num && !isNaN(num)) return num;
+        if (e[0] !== "0" || (e[0] === "0" && e.length === 1)) return e;
+        return "";
+      })
+      .join(" ");
+  };
+
   const appendChar = (char, keyboard = false) => {
     let operators = ["+", "-", "×", "÷"];
     if (keyboard) {
@@ -58,16 +63,7 @@ const Keypad = () => {
     if (isOperator) {
       if (screenTextRef.current.slice(-1) === " ") {
         setScreenText((prev) => prev.slice(0, -3) + ` ${char} `);
-        setEvalText((prev) => {
-          switch (char) {
-            case "×":
-              return prev.slice(0, -1) + "*";
-            case "÷":
-              return prev.slice(0, -1) + "/";
-            default:
-              return prev.slice(0, -1) + char;
-          }
-        });
+
         return;
       }
       if (!screenTextRef.current) {
@@ -76,7 +72,6 @@ const Keypad = () => {
     } else {
       if (overwriteRef.current) {
         setScreenText(char);
-        setEvalText(char);
         setOverwrite(false);
         return;
       }
@@ -88,24 +83,11 @@ const Keypad = () => {
       }
       return prev + char;
     });
-    setEvalText((prev) => {
-      if (isOperator) {
-        switch (char) {
-          case "×":
-            return prev + "*";
-          case "÷":
-            return prev + "/";
-          default:
-            break;
-        }
-      }
-      return prev + char;
-    });
+    setScreenText(() => cleanup(screenTextRef.current));
     setOverwrite(false);
   };
 
   const delChar = () => {
-    setEvalText((prev) => prev.slice(0, -1));
     setScreenText((prev) => {
       if (prev.slice(-1) === " ") {
         return prev.slice(0, -3);
@@ -116,14 +98,24 @@ const Keypad = () => {
 
   const reset = () => {
     setScreenText("");
-    setEvalText("");
   };
 
+  const makeEvalText = (text) =>
+    text
+      .split(" ")
+      .map((e) => {
+        if (e === "×") return "*";
+        if (e === "÷") return "/";
+        return e;
+      })
+      .join("");
+
   const evaluate = () => {
-    let result = String(Number(eval(evalTextRef.current).toFixed(8)));
-    if (result === "Infinity") result = "";
+    const evalText = makeEvalText(screenTextRef.current);
+
+    let result = String(Number(eval(evalText).toFixed(8)));
+    if (result === "Infinity") result = "Error";
     setScreenText(result);
-    setEvalText(result);
     setOverwrite(true);
   };
 
