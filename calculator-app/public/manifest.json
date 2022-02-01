@@ -1,6 +1,7 @@
 {
   "short_name": "Calculator",
-  "name": "Calculator | ReactJS",
+  "name": "Calculator | Built with ReactJS",
+  "author": "Syed Ali Mansoor",
   "icons": [
     {
       "src": "logo.svg",

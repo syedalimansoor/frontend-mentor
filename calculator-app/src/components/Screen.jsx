@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Textfit } from "react-textfit";
 import styled from "styled-components";
 
 import CalculatorContext from "../context/CalculatorContext";
@@ -6,12 +7,17 @@ import CalculatorContext from "../context/CalculatorContext";
 const Screen = () => {
   const { screenText } = useContext(CalculatorContext);
 
-  return <StyledScreen>{screenText}</StyledScreen>;
+  return (
+    <StyledScreen>
+      <span>{screenText}</span>
+    </StyledScreen>
+  );
 };
 
 const StyledScreen = styled.output`
   display: block;
   width: 100%;
+
   padding: 0.7em;
   border-radius: 0.3em;
   color: ${({ theme }) => theme.text.screen};
@@ -22,10 +28,12 @@ const StyledScreen = styled.output`
   transition-timing-function: ease;
   margin-bottom: 1em;
 
-  &:empty::before {
-    content: "Enter expression...";
-    font-size: 0.6em;
-    opacity: 0.3;
+  span {
+    &:empty::before {
+      content: "Enter expression...";
+      font-size: 0.6em;
+      opacity: 0.3;
+    }
   }
 
   @media (min-width: 800px) {

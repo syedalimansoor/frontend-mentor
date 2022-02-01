@@ -33,6 +33,7 @@ const Calculator = () => {
 
 const StyledCalculator = styled.section`
   width: min(100%, 17em);
+  max-width: 100%;
 `;
 
 export default Calculator;
