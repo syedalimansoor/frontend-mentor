@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Textfit } from "react-textfit";
 import styled from "styled-components";
 
 import CalculatorContext from "../context/CalculatorContext";
