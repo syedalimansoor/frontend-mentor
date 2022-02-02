@@ -133,11 +133,11 @@ const Keypad = () => {
         evaluate();
         return;
       }
-      if (char === "Backspace") {
+      if (char === "Backspace" || char === "Delete") {
         delChar();
         return;
       }
-      if (char === "Escape" || char === "Delete") {
+      if (char === "Escape") {
         reset();
         return;
       }
