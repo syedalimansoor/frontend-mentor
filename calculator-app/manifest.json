@@ -4,9 +4,9 @@
   "author": "Syed Ali Mansoor",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "logo.svg",
       "sizes": "144x144 64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/svg"
     }
   ],
   "start_url": ".",
