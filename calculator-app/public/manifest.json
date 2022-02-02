@@ -1,12 +1,12 @@
 {
   "short_name": "Calculator",
-  "name": "Calculator | Built with ReactJS",
+  "name": "Calculator | Made by Syed Ali Mansoor",
   "author": "Syed Ali Mansoor",
   "icons": [
     {
-      "src": "logo.svg",
+      "src": "logo.png",
       "sizes": "144x144 64x64 32x32 24x24 16x16",
-      "type": "image/svg"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
