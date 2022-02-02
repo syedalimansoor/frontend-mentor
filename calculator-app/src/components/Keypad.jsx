@@ -129,7 +129,7 @@ const Keypad = () => {
       evt.preventDefault();
       let { key: char } = evt;
 
-      if (char === "Enter") {
+      if (char === "Enter" || char === "=") {
         evaluate();
         return;
       }
