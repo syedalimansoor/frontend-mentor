@@ -1,5 +1,9 @@
 # Calculator App
 
+## Welcome!
+
+This is a simple calculator built with ReactJS, as part of a coding challenge on [Frontend Mentor](https://www.frontendmentor.io/)
+
 ## Features
 
 - Responsive to mobile and desktop sizes
@@ -18,3 +22,10 @@
 
 - Live demo: https://alimansoor-create.github.io/frontend-mentor/calculator-app/
 - Github repo: https://github.com/alimansoor-create/frontend-mentor/tree/master/calculator-app
+
+## Developed by
+
+Syed Ali Mansoor
+
+- Github - [@alimansoor-create](https://github.com/alimansoor-create)
+- Instagram - [@\_\_ali.mansoor](https://www.instagram.com/__ali.mansoor/)
