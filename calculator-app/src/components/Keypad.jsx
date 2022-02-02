@@ -137,7 +137,7 @@ const Keypad = () => {
         delChar();
         return;
       }
-      if (char === "Escape") {
+      if (char === "Escape" || char === "Delete") {
         reset();
         return;
       }
