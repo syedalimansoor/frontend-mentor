@@ -23,6 +23,11 @@ This is a simple calculator built with ReactJS, as part of a coding challenge on
 - Live demo: https://alimansoor-create.github.io/frontend-mentor/calculator-app/
 - Github repo: https://github.com/alimansoor-create/frontend-mentor/tree/master/calculator-app
 
+## Screenshots
+
+![desktop](./screenshots/desktop.png)
+![mobile](./screenshots/mobile.png)
+
 ## Developed by
 
 Syed Ali Mansoor
